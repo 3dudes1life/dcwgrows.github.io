@@ -14,10 +14,8 @@
             margin: 0;
             padding: 0;
             min-height: 100vh;
-            background: url('https://tse4.mm.bing.net/th?id=OIP.SSY4-Blry371NMPH4iMXUgHaHa&pid=Api') repeat;
+            background: url('https://tse4.mm.bing.net/th?id=OIP.SSY4-Blry371NMPH4iMXUgHaHa&pid=Api') no-repeat center center fixed;
             background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -89,19 +87,14 @@
 
         /* Mobile Optimization */
         @media (max-width: 768px) {
-            body {
-                background-size: contain;
-                background-repeat: repeat;
-                background-position: top;
-            }
-
             .card {
-                padding: 40px 20px;
+                padding: 30px 15px;
+                max-width: 95%;
                 background-color: rgba(255, 255, 255, 0.85);
             }
 
             .logo-container {
-                max-width: 350px;
+                max-width: 300px;
                 margin-bottom: 30px;
             }
 
