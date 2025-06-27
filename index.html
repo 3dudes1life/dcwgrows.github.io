@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,59 +11,58 @@
             font-family: 'Quicksand', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('https://images.unsplash.com/photo-1516302350523-2481d53f3e1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
-            background-size: cover;
-            color: #333333;
-        }
-        .overlay {
-            background-color: rgba(245, 245, 220, 0.85); /* Soft beige tint with more breathability */
             min-height: 100vh;
+            background: url('https://www.toptal.com/designers/subtlepatterns/patterns/leaf.png') repeat;
+            background-size: 300px;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 60px 20px;
+            color: #333333;
         }
-        .logo {
-            max-width: 500px; /* BIG HERO LOGO */
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.95);
+            max-width: 700px;
             width: 90%;
-            margin-bottom: 50px;
-        }
-        .content {
-            max-width: 800px;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
             text-align: center;
-            padding: 0 20px;
         }
+
+        .logo {
+            max-width: 400px;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
         p {
-            font-size: 1.4em;
+            font-size: 1.3em;
             line-height: 1.8;
             margin-bottom: 40px;
         }
+
         a {
             display: inline-block;
             background-color: #6B8E23;
             color: white;
-            padding: 18px 30px;
+            padding: 16px 28px;
             text-decoration: none;
             border-radius: 8px;
             font-size: 1.2em;
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
+
         a:hover {
             background-color: #5A7A1E;
             transform: scale(1.05);
         }
-        img.featured {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 50px;
-            border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
+
         @media (max-width: 600px) {
             p {
                 font-size: 1.1em;
             }
+
             a {
                 padding: 14px 24px;
                 font-size: 1em;
@@ -70,23 +70,21 @@
         }
     </style>
 </head>
+
 <body>
-    <div class="overlay">
+    <div class="card">
         <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo" class="logo">
 
-        <div class="content">
-            <img src="https://via.placeholder.com/800x500?text=Your+Plant+Photo+Here" alt="DCW Grows Plants" class="featured">
+        <p>
+            We’re plant lovers on a mission to grow something beautiful — and share it with you! <br><br>
+            DCW Grows sprouted in 2021 on Etsy, and thanks to your support, it quickly took off.<br><br>
+            Right now, we specialize in outdoor plants, succulents, and garden favorites — but we’re just getting started! We’re always expanding and can’t wait to bring you even more plants, garden finds, and backyard treasures soon.<br><br>
+            🌿 Come back often for planting tips, tricks, and behind-the-scenes pics from our garden adventures.<br>
+            💚 Shop our Etsy below to bring a little DCW Grows magic to your home.
+        </p>
 
-            <p>
-                We’re plant lovers on a mission to grow something beautiful — and share it with you! <br><br>
-                DCW Grows sprouted in 2021 on Etsy, and thanks to your support, it quickly took off.<br><br>
-                Right now, we specialize in outdoor plants, succulents, and garden favorites — but we’re just getting started! We’re always expanding and can’t wait to bring you even more plants, garden finds, and backyard treasures soon.<br><br>
-                🌿 Come back often for planting tips, tricks, and behind-the-scenes pics from our garden adventures.<br>
-                💚 Shop our Etsy below to bring a little DCW Grows magic to your home.
-            </p>
-
-            <a href="https://www.etsy.com/shop/DCWGrows" target="_blank">Visit Our Etsy Shop</a>
-        </div>
+        <a href="https://www.etsy.com/shop/DCWGrows" target="_blank">Visit Our Etsy Shop</a>
     </div>
 </body>
+
 </html>
