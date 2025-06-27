@@ -1,141 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DCW Grows 🌱</title>
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
-    <style>
-        body {
-            font-family: 'Quicksand', sans-serif;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            background: url('https://tse1.mm.bing.net/th?id=OIP.K164yIpW28Xl1SQoutXPWwHaHa&pid=Api') no-repeat center center fixed;
-            background-size: cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            padding: 40px 20px;
-            color: #333333;
-        }
-
-        .box {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 30px 40px;
-            border-radius: 20px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            max-width: 700px;
-            width: 90%;
-            text-align: center;
-        }
-
-        .logo {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-            object-fit: contain;
-            object-position: center;
-            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
-            animation: pulse 2s ease-out;
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(0.95);
-                opacity: 0.8;
-            }
-
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        p {
-            font-size: 1.4em;
-            line-height: 1.8;
-            margin-bottom: 30px;
-        }
-
-        .button-group {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        a {
-            display: inline-block;
-            background-color: #6B8E23;
-            color: white;
-            padding: 16px 30px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 1.2em;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        a:hover {
-            background-color: #5A7A1E;
-            transform: scale(1.05);
-        }
-
-        /* Mobile Optimization */
-        @media (max-width: 768px) {
-            body {
-                gap: 30px;
-            }
-
-            .box {
-                padding: 20px 15px;
-            }
-
-            .logo {
-                max-width: 300px;
-            }
-
-            p {
-                font-size: 1.1em;
-            }
-
-            a {
-                padding: 14px 24px;
-                font-size: 1em;
-            }
-
-            .button-group {
-                gap: 15px;
-            }
-        }
-    </style>
-</head>
-
 <body>
-    <!-- Logo Box -->
-    <div class="box">
-        <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo" class="logo" />
-    </div>
-
-    <!-- Text & Button Box -->
-    <div class="box">
-        <p>
-            We’re plant lovers on a mission to grow something beautiful — and share it with you! <br /><br />
-            DCW Grows sprouted in 2021 on Etsy, and thanks to your support, it quickly took off.<br /><br />
-            Right now, we specialize in outdoor plants, succulents, and garden favorites — but we’re just getting started! We’re always expanding and can’t wait to bring you even more plants, garden finds, and backyard treasures soon.<br /><br />
-            🌿 Come back often for planting tips, tricks, and behind-the-scenes pics from our garden adventures.<br />
-            💚 Shop our Etsy and follow us on Instagram below.
-        </p>
-
-        <div class="button-group">
-            <a href="https://www.etsy.com/shop/DCWGrows" target="_blank">Visit Our Etsy Shop</a>
-            <a href="https://www.instagram.com/dcwgrows" target="_blank">Follow Us on Instagram</a>
-        </div>
-    </div>
+  ...
+  <div class="button-group">
+    <a href="https://www.etsy.com/shop/DCWGrows" target="_blank">Visit Our Etsy Shop</a>
+    <a href="https://www.instagram.com/dcwgrows" target="_blank">Follow Us on Instagram</a>
+    <a href="tips.html">Planting Tips & Care</a>
+  </div>
+  ...
 </body>
-
-</html>
+<style>
+  body {
+    background-size: cover;
+    background-position: center center;
+  }
+  @media (max-width: 768px) {
+    body {
+      background-size: contain;
+      background-position: top center;
+    }
+  }
+</style>
