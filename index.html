@@ -22,18 +22,32 @@
 
         .card {
             background-color: rgba(255, 255, 255, 0.95);
-            max-width: 800px;
+            max-width: 900px;
             width: 90%;
-            padding: 50px 40px;
+            padding: 60px 50px;
             border-radius: 20px;
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
             text-align: center;
         }
 
         .logo {
-            max-width: 450px;
+            max-width: 550px;
             width: 100%;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+            animation: pulse 2s ease-out;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
         p {
@@ -59,6 +73,14 @@
         }
 
         @media (max-width: 600px) {
+            .card {
+                padding: 40px 20px;
+            }
+
+            .logo {
+                max-width: 350px;
+            }
+
             p {
                 font-size: 1.1em;
             }
