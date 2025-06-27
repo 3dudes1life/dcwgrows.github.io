@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gardening 101 🌱 DCW Grows</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
     <style>
         body {
             font-family: 'Quicksand', sans-serif;
@@ -18,32 +18,72 @@
             color: #333333;
         }
 
-        header {
+        nav {
             background-color: rgba(255, 255, 255, 0.95);
-            padding: 20px 20px;
+            padding: 20px 40px;
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
             position: sticky;
             top: 0;
             z-index: 10;
-            margin-bottom: 40px;
         }
 
-        a.nav-button {
-            background-color: #6B8E23;
-            color: white;
-            padding: 14px 28px;
+        .menu-left a {
+            color: #333333;
             text-decoration: none;
-            border-radius: 8px;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-size: 1.2em;
+            font-weight: bold;
         }
 
-        a.nav-button:hover {
-            background-color: #5A7A1E;
-            transform: scale(1.05);
+        .menu-left a:hover {
+            color: #6B8E23;
+        }
+
+        nav .menu {
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            color: #333333;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #6B8E23;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 2em;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                right: 20px;
+                width: auto;
+                background-color: rgba(255, 255, 255, 0.95);
+                padding: 20px 30px;
+                border-radius: 10px;
+                text-align: center;
+            }
+
+            nav .menu.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
         }
 
         section {
@@ -55,13 +95,7 @@
             text-align: center;
         }
 
-        h1 {
-            font-size: 3em;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        h2, h3 {
+        h1, h2, h3 {
             text-align: center;
         }
 
@@ -70,7 +104,6 @@
             line-height: 1.8;
             max-width: 800px;
             margin: 0 auto 30px auto;
-            text-align: left;
         }
 
         ul {
@@ -91,28 +124,13 @@
             margin: 40px auto 0 auto;
         }
 
-        /* Mobile Optimization */
         @media (max-width: 768px) {
-            header {
-                padding: 15px;
-                gap: 15px;
-            }
-
             section {
                 padding: 30px 15px;
             }
 
-            h1 {
-                font-size: 2.2em;
-            }
-
             p, ul {
                 font-size: 1.1em;
-            }
-
-            a.nav-button {
-                padding: 12px 20px;
-                font-size: 1em;
             }
         }
     </style>
@@ -120,19 +138,24 @@
 
 <body>
 
-    <!-- Header with Navigation -->
-    <header>
-        <a href="index.html" class="nav-button">Home</a>
-        <a href="tips.html" class="nav-button">Planting Tips</a>
-        <a href="gardening101.html" class="nav-button">Gardening 101</a>
-        <a href="https://www.etsy.com/shop/DCWGrows" target="_blank" class="nav-button">Etsy Shop</a>
-        <a href="https://www.instagram.com/dcwgrows" target="_blank" class="nav-button">Instagram</a>
-    </header>
+    <!-- Navigation with Home on Left and Menu on Right -->
+    <nav>
+        <div class="menu-left">
+            <a href="index.html">Home</a>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="menu" id="menu">
+            <a href="tips.html">Planting Tips</a>
+            <a href="gardening101.html">Gardening 101</a>
+            <a href="https://www.etsy.com/shop/DCWGrows" target="_blank">Etsy Shop</a>
+            <a href="https://www.instagram.com/dcwgrows" target="_blank">Instagram</a>
+        </div>
+    </nav>
 
-    <!-- Bar Sections -->
+    <!-- Page Content -->
     <section>
         <h1>Gardening 101 🌱</h1>
-        <p style="text-align:center;">Learn to grow with us or master your skills.</p>
+        <p><em>Learn to grow with us or master your skills.</em></p>
     </section>
 
     <section>
@@ -263,6 +286,13 @@
     <footer>
         <p>&copy; 2025 DCW Grows | All rights reserved</p>
     </footer>
+
+    <!-- JavaScript for Menu -->
+    <script>
+        function toggleMenu() {
+            document.getElementById('menu').classList.toggle('active');
+        }
+    </script>
 
 </body>
 
