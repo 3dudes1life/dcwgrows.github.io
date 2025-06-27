@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Planting Tips 🌱 DCW Grows</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
     <style>
         body {
             font-family: 'Quicksand', sans-serif;
@@ -18,31 +18,72 @@
             color: #333333;
         }
 
-        header {
+        nav {
             background-color: rgba(255, 255, 255, 0.95);
-            padding: 20px 20px;
+            padding: 20px 40px;
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
             position: sticky;
             top: 0;
             z-index: 10;
         }
 
-        a.nav-button {
-            background-color: #6B8E23;
-            color: white;
-            padding: 14px 28px;
+        .menu-left a {
+            color: #333333;
             text-decoration: none;
-            border-radius: 8px;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-size: 1.2em;
+            font-weight: bold;
         }
 
-        a.nav-button:hover {
-            background-color: #5A7A1E;
-            transform: scale(1.05);
+        .menu-left a:hover {
+            color: #6B8E23;
+        }
+
+        nav .menu {
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            color: #333333;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #6B8E23;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 2em;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                right: 20px;
+                width: auto;
+                background-color: rgba(255, 255, 255, 0.95);
+                padding: 20px 30px;
+                border-radius: 10px;
+                text-align: center;
+            }
+
+            nav .menu.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
         }
 
         section {
@@ -51,23 +92,27 @@
             max-width: 1000px;
             margin: 40px auto;
             border-radius: 10px;
+            text-align: center;
         }
 
         h1, h2 {
             text-align: center;
         }
 
-        ul {
-            font-size: 1.2em;
-            line-height: 1.7;
-            list-style: none;
-            padding: 0;
+        p {
+            font-size: 1.4em;
+            line-height: 1.8;
             max-width: 800px;
-            margin: 0 auto;
+            margin: 0 auto 30px auto;
         }
 
-        li {
-            margin-bottom: 30px;
+        ul {
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            font-size: 1.4em;
+            line-height: 1.8;
+            padding-left: 20px;
         }
 
         footer {
@@ -79,24 +124,13 @@
             margin: 40px auto 0 auto;
         }
 
-        /* Mobile Optimization */
         @media (max-width: 768px) {
-            header {
-                padding: 15px;
-                gap: 15px;
-            }
-
             section {
                 padding: 30px 15px;
             }
 
-            ul {
+            p, ul {
                 font-size: 1.1em;
-            }
-
-            a.nav-button {
-                padding: 12px 20px;
-                font-size: 1em;
             }
         }
     </style>
@@ -104,27 +138,30 @@
 
 <body>
 
-    <!-- Header with Navigation -->
-    <header>
-        <a href="index.html" class="nav-button">Home</a>
-        <a href="tips.html" class="nav-button">Planting Tips</a>
-        <a href="gardening101.html" class="nav-button">Gardening 101</a>
-        <a href="https://www.etsy.com/shop/DCWGrows" target="_blank" class="nav-button">Etsy Shop</a>
-        <a href="https://www.instagram.com/dcwgrows" target="_blank" class="nav-button">Instagram</a>
-    </header>
+    <!-- Navigation with Home on Left and Menu on Right -->
+    <nav>
+        <div class="menu-left">
+            <a href="index.html">Home</a>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="menu" id="menu">
+            <a href="tips.html">Planting Tips</a>
+            <a href="gardening101.html">Gardening 101</a>
+            <a href="https://www.etsy.com/shop/DCWGrows" target="_blank">Etsy Shop</a>
+            <a href="https://www.instagram.com/dcwgrows" target="_blank">Instagram</a>
+        </div>
+    </nav>
 
-    <!-- Page Sections -->
+    <!-- Page Content -->
     <section>
-        <h1>Planting Tips & Care 🌿</h1>
+        <h1>Planting Tips & Care 🌱</h1>
+        <p><em>These are the growing tips for the plants that are currently on sale on Etsy.</em></p>
         <ul>
             <li><strong>Calandrinia:</strong> Take stem cuttings, plant in well-draining soil, water weekly, or let it self-seed.</li>
             <li><strong>Spiny Texas Prickly Pear:</strong> Take a pad in spring, let it heal for a few days, then plant upright in drainage soil.</li>
             <li><strong>Santa Rita Prickly Pear:</strong> Same as above — cut, cure, then plant in well-draining soil.</li>
             <li><strong>Drosanthemum hispidum ("Purple Rosea Iceplant"):</strong> Use cuttings, plant stem-down, water weekly till established, then reduce frequency.</li>
             <li><strong>Senecio mandraliscae ("Blue Chalk Sticks"):</strong> Propagate from cuttings and water weekly, or allow seedlings to self-populate.</li>
-            <li><strong>Fire Euphorbia tirucalli ("Spineless Pencil Cactus"):</strong> Cut and plant stem-down, be cautious of poisonous sap, water lightly; color shifts with soil moisture.</li>
-            <li><strong>Green Aeonium:</strong> Propagate using cuttings, water weekly, or allow natural self-seeding.</li>
-            <li><strong>Dragon Fruit:</strong> Propagate from cuttings — may take up to two years before flowering and fruiting.</li>
         </ul>
     </section>
 
@@ -133,5 +170,13 @@
         <p>&copy; 2025 DCW Grows | All rights reserved</p>
     </footer>
 
+    <!-- JavaScript for Menu -->
+    <script>
+        function toggleMenu() {
+            document.getElementById('menu').classList.toggle('active');
+        }
+    </script>
+
 </body>
+
 </html>
