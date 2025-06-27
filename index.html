@@ -108,51 +108,34 @@
             width: 90%;
             max-width: 750px;
             margin: 40px auto 0 auto;
-            background: rgba(255, 255, 255, 0.85); /* A little whiter */
+            background: rgba(255, 255, 255, 0.85); /* Slightly whiter bubble */
             border-radius: 50%;
             padding: 40px;
             display: flex;
             justify-content: center;
             align-items: center;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-            position: relative;
-            overflow: hidden;
         }
 
-        .logo-container {
-            position: relative;
-            display: inline-block;
-        }
-
-        img.logo-shimmer {
+        .logo-shimmer {
             width: 100%;
             max-width: 700px;
             height: 100%;
             object-fit: contain;
             object-position: center;
-            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
-            animation: pulse 2s ease-out;
             position: relative;
             z-index: 2;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+            animation: shimmerLogo 4s infinite linear;
+            background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .shimmer-effect {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -75%;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(120deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.1) 100%);
-            animation: shimmer 4s infinite;
-            z-index: 3;
-            pointer-events: none;
-        }
-
-        @keyframes shimmer {
-            0% { left: -75%; }
-            50% { left: 125%; }
-            100% { left: 125%; }
+        @keyframes shimmerLogo {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
         }
 
         section {
@@ -234,12 +217,9 @@
         </div>
     </nav>
 
-    <!-- Logo Section with Shimmer on Logo Only -->
+    <!-- Logo Section -->
     <div class="logo-circle">
-        <div class="logo-container">
-            <div class="shimmer-effect"></div>
-            <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo" class="logo-shimmer">
-        </div>
+        <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo" class="logo-shimmer">
     </div>
 
     <!-- Welcome Section -->
