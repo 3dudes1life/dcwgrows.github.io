@@ -104,6 +104,27 @@
             }
         }
 
+        .torn-section {
+            position: relative;
+            padding: 60px 20px;
+            background-color: rgba(255, 255, 255, 0.95);
+            max-width: 1000px;
+            margin: 40px auto 0 auto;
+            border-radius: 10px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 5% 100%, 0 85%);
+        }
+
+        img.logo {
+            width: 100%;
+            max-width: 700px;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+            animation: pulse 2s ease-out;
+        }
+
         section {
             background-color: rgba(255, 255, 255, 0.9);
             padding: 60px 20px;
@@ -124,14 +145,14 @@
             margin: 0 auto 30px auto;
         }
 
-        img.logo {
-            width: 100%;
-            max-width: 700px;
-            height: 100%;
-            object-fit: contain;
-            object-position: center;
-            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
-            animation: pulse 2s ease-out;
+        a.button {
+            display: inline-block;
+            background-color: #6B8E23;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         footer {
@@ -144,7 +165,7 @@
         }
 
         @media (max-width: 768px) {
-            section {
+            .torn-section, section {
                 padding: 30px 15px;
             }
 
@@ -179,10 +200,10 @@
         </div>
     </nav>
 
-    <!-- Logo Section -->
-    <section>
+    <!-- Torn Paper Logo Section -->
+    <div class="torn-section">
         <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo" class="logo">
-    </section>
+    </div>
 
     <!-- Welcome Section -->
     <section>
@@ -190,7 +211,7 @@
         <p>We’re plant lovers on a mission to grow something beautiful — and share it with you!</p>
         <p>We started our business in 2021 on Etsy and it quickly took off! We currently sell outdoor plants and succulents, but we’ll be expanding into even more soon. Come back for tips, tricks, and plant pics!</p>
         <p>View our Etsy shop below!</p>
-        <a href="https://www.etsy.com/shop/DCWGrows" target="_blank" style="display: inline-block; background-color: #6B8E23; color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: bold;">Visit Our Etsy Shop</a>
+        <a href="https://www.etsy.com/shop/DCWGrows" target="_blank" class="button">Visit Our Etsy Shop</a>
     </section>
 
     <!-- Footer -->
@@ -205,7 +226,7 @@
         }
 
         function toggleSubmenu(event) {
-            event.preventDefault(); // Stop link from navigating
+            event.preventDefault();
             document.getElementById('submenu').classList.toggle('active');
         }
     </script>
