@@ -13,36 +13,30 @@
             margin: 0;
             padding: 0;
             min-height: 100vh;
-            background: url('https://tse1.mm.bing.net/th?id=OIP.1MbERnU_tJIOonpYCab3XQHaH0&pid=Api') no-repeat center center fixed;
+            background: url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
             background-size: cover;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            gap: 40px;
+            padding: 40px 20px;
             color: #333333;
         }
 
-        .card {
+        .box {
             background-color: rgba(255, 255, 255, 0.9);
-            max-width: 900px;
-            width: 90%;
-            padding: 60px 50px;
+            padding: 30px 40px;
             border-radius: 20px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            max-width: 700px;
+            width: 90%;
             text-align: center;
-        }
-
-        .logo-container {
-            width: 100%;
-            max-width: 550px;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto 50px auto;
         }
 
         .logo {
             width: 100%;
+            max-width: 400px;
             height: auto;
             object-fit: contain;
             object-position: center;
@@ -65,7 +59,7 @@
         p {
             font-size: 1.4em;
             line-height: 1.8;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
         }
 
         .button-group {
@@ -79,7 +73,7 @@
             display: inline-block;
             background-color: #6B8E23;
             color: white;
-            padding: 18px 35px;
+            padding: 16px 30px;
             text-decoration: none;
             border-radius: 8px;
             font-size: 1.2em;
@@ -93,15 +87,16 @@
 
         /* Mobile Optimization */
         @media (max-width: 768px) {
-            .card {
-                padding: 30px 15px;
-                max-width: 95%;
-                background-color: rgba(255, 255, 255, 0.85);
+            body {
+                gap: 30px;
             }
 
-            .logo-container {
+            .box {
+                padding: 20px 15px;
+            }
+
+            .logo {
                 max-width: 300px;
-                margin-bottom: 30px;
             }
 
             p {
@@ -109,7 +104,7 @@
             }
 
             a {
-                padding: 14px 28px;
+                padding: 14px 24px;
                 font-size: 1em;
             }
 
@@ -121,17 +116,19 @@
 </head>
 
 <body>
-    <div class="card">
-        <div class="logo-container">
-            <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo" class="logo" />
-        </div>
+    <!-- Logo Box -->
+    <div class="box">
+        <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo" class="logo" />
+    </div>
 
+    <!-- Text & Button Box -->
+    <div class="box">
         <p>
             We’re plant lovers on a mission to grow something beautiful — and share it with you! <br /><br />
             DCW Grows sprouted in 2021 on Etsy, and thanks to your support, it quickly took off.<br /><br />
             Right now, we specialize in outdoor plants, succulents, and garden favorites — but we’re just getting started! We’re always expanding and can’t wait to bring you even more plants, garden finds, and backyard treasures soon.<br /><br />
             🌿 Come back often for planting tips, tricks, and behind-the-scenes pics from our garden adventures.<br />
-            💚 Shop our Etsy below to bring a little DCW Grows magic to your home.
+            💚 Shop our Etsy and follow us on Instagram below.
         </p>
 
         <div class="button-group">
@@ -142,3 +139,4 @@
 </body>
 
 </html>
+
