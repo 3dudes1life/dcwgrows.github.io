@@ -1,59 +1,137 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DCW Grows – Planting Tips 🌱</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Quicksand', sans-serif;
-      margin: 0; padding: 0;
-      min-height: 100vh;
-      background: url('tropical%20background.png') no-repeat center center fixed;
-      background-size: cover; color: #333;
-    }
-    .container {
-      background: rgba(255,255,255,0.9);
-      margin: 40px auto;
-      padding: 30px 40px;
-      max-width: 800px;
-      border-radius: 20px;
-    }
-    h1 { text-align: center; margin-bottom: 20px; }
-    ul {
-      line-height: 1.6; font-size: 1.2em;
-      list-style: none; padding: 0;
-    }
-    li { margin-bottom: 20px; }
-    .nav-btn {
-      display: inline-block;
-      margin-top: 20px;
-      background: #6B8E23;
-      color: #fff;
-      padding: 14px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    .nav-btn:hover { background: #5A7A1E; }
-  </style>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planting Tips 🌱 DCW Grows</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: url('tropical%20background.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #333333;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        a.nav-button {
+            background-color: #6B8E23;
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        a.nav-button:hover {
+            background-color: #5A7A1E;
+            transform: scale(1.05);
+        }
+
+        section {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 40px auto;
+            border-radius: 10px;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        ul {
+            font-size: 1.2em;
+            line-height: 1.7;
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        li {
+            margin-bottom: 30px;
+        }
+
+        footer {
+            background-color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            max-width: 1000px;
+            margin: 40px auto 0 auto;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px;
+                gap: 15px;
+            }
+
+            section {
+                padding: 30px 15px;
+            }
+
+            ul {
+                font-size: 1.1em;
+            }
+
+            a.nav-button {
+                padding: 12px 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="container">
-    <h1>Planting Tips & Care 🌿</h1>
-    <ul>
-      <li><strong>Calandrinia:</strong> Take stem cuttings, plant in well-draining soil, water weekly, or let it self-seed.</li>
-      <li><strong>Spiny Texas Prickly Pear:</strong> Take a pad in spring, let it heal for a few days, then plant upright in drainage soil.</li>
-      <li><strong>Santa Rita Prickly Pear:</strong> Same as above — cut, cure, then plant in well-draining soil.</li>
-      <li><strong>Drosanthemum hispidum ("Purple Rosea Iceplant"):</strong> Use cuttings, plant stem-down, water weekly till established, then reduce frequency.</li>
-      <li><strong>Senecio mandraliscae ("Blue Chalk Sticks"):</strong> Propagate from cuttings and water weekly, or allow seedlings to self-populate.</li>
-      <li><strong>Fire Euphorbia tirucalli ("Spineless Pencil Cactus"):</strong> Cut and plant stem-down, be cautious of poisonous sap, water lightly; color shifts with soil moisture.</li>
-      <li><strong>Green Aeonium:</strong> Propagate using cuttings, water weekly, or allow natural self-seeding.</li>
-      <li><strong>Dragon Fruit:</strong> Propagate from cuttings — may take up to two years before flowering and fruiting.</li>
-    </ul>
-    <div style="text-align: center;">
-      <a href="index.html" class="nav-btn">← Back to Home</a>
-    </div>
-  </div>
-</body></html>
+
+    <!-- Header with Navigation -->
+    <header>
+        <a href="index.html" class="nav-button">Home</a>
+        <a href="tips.html" class="nav-button">Planting Tips</a>
+        <a href="gardening101.html" class="nav-button">Gardening 101</a>
+        <a href="https://www.etsy.com/shop/DCWGrows" target="_blank" class="nav-button">Etsy Shop</a>
+        <a href="https://www.instagram.com/dcwgrows" target="_blank" class="nav-button">Instagram</a>
+    </header>
+
+    <!-- Page Sections -->
+    <section>
+        <h1>Planting Tips & Care 🌿</h1>
+        <ul>
+            <li><strong>Calandrinia:</strong> Take stem cuttings, plant in well-draining soil, water weekly, or let it self-seed.</li>
+            <li><strong>Spiny Texas Prickly Pear:</strong> Take a pad in spring, let it heal for a few days, then plant upright in drainage soil.</li>
+            <li><strong>Santa Rita Prickly Pear:</strong> Same as above — cut, cure, then plant in well-draining soil.</li>
+            <li><strong>Drosanthemum hispidum ("Purple Rosea Iceplant"):</strong> Use cuttings, plant stem-down, water weekly till established, then reduce frequency.</li>
+            <li><strong>Senecio mandraliscae ("Blue Chalk Sticks"):</strong> Propagate from cuttings and water weekly, or allow seedlings to self-populate.</li>
+            <li><strong>Fire Euphorbia tirucalli ("Spineless Pencil Cactus"):</strong> Cut and plant stem-down, be cautious of poisonous sap, water lightly; color shifts with soil moisture.</li>
+            <li><strong>Green Aeonium:</strong> Propagate using cuttings, water weekly, or allow natural self-seeding.</li>
+            <li><strong>Dragon Fruit:</strong> Propagate from cuttings — may take up to two years before flowering and fruiting.</li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 DCW Grows | All rights reserved</p>
+    </footer>
+
+</body>
+</html>
