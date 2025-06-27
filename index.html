@@ -18,7 +18,7 @@
             color: #333333;
         }
 
-        /* Clean top navigation */
+        /* Clean top navigation with mobile fix */
         nav {
             background-color: rgba(255, 255, 255, 0.95);
             padding: 20px 40px;
@@ -28,6 +28,7 @@
             position: sticky;
             top: 0;
             z-index: 10;
+            flex-wrap: wrap;
         }
 
         nav a {
@@ -36,6 +37,7 @@
             font-size: 1.2em;
             font-weight: bold;
             transition: color 0.3s ease;
+            padding: 10px 15px;
         }
 
         nav a:hover {
@@ -99,8 +101,14 @@
         @media (max-width: 768px) {
             nav {
                 flex-direction: column;
-                gap: 20px;
+                gap: 15px;
                 padding: 20px;
+                align-items: center;
+            }
+
+            nav a {
+                font-size: 1.3em;
+                padding: 15px 20px;
             }
 
             .hero {
@@ -112,10 +120,6 @@
             }
 
             p {
-                font-size: 1.1em;
-            }
-
-            nav a {
                 font-size: 1.1em;
             }
         }
