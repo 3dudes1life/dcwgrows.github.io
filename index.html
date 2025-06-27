@@ -30,6 +30,17 @@
             z-index: 10;
         }
 
+        .menu-left a {
+            color: #333333;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .menu-left a:hover {
+            color: #6B8E23;
+        }
+
         nav .menu {
             display: flex;
             gap: 40px;
@@ -58,12 +69,14 @@
             nav .menu {
                 display: none;
                 flex-direction: column;
-                width: 100%;
-                background-color: rgba(255, 255, 255, 0.95);
                 position: absolute;
                 top: 70px;
-                left: 0;
-                padding: 20px 0;
+                right: 20px;
+                width: auto;
+                background-color: rgba(255, 255, 255, 0.95);
+                padding: 20px 30px;
+                border-radius: 10px;
+                text-align: center; /* Center the text inside the dropdown */
             }
 
             nav .menu.active {
@@ -147,11 +160,13 @@
 
 <body>
 
-    <!-- Navigation with Hamburger Menu -->
+    <!-- Navigation with Home on Left and Menu on Right -->
     <nav>
+        <div class="menu-left">
+            <a href="index.html">Home</a>
+        </div>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <div class="menu" id="menu">
-            <a href="index.html">Home</a>
             <a href="tips.html">Planting Tips</a>
             <a href="gardening101.html">Gardening 101</a>
             <a href="https://www.etsy.com/shop/DCWGrows" target="_blank">Etsy Shop</a>
