@@ -18,17 +18,21 @@
             color: #333333;
         }
 
-        /* Clean top navigation with mobile fix */
+        /* Navigation Styling */
         nav {
             background-color: rgba(255, 255, 255, 0.95);
             padding: 20px 40px;
             display: flex;
-            justify-content: center;
-            gap: 40px;
+            justify-content: space-between;
+            align-items: center;
             position: sticky;
             top: 0;
             z-index: 10;
-            flex-wrap: wrap;
+        }
+
+        nav .menu {
+            display: flex;
+            gap: 40px;
         }
 
         nav a {
@@ -37,11 +41,38 @@
             font-size: 1.2em;
             font-weight: bold;
             transition: color 0.3s ease;
-            padding: 10px 15px;
         }
 
         nav a:hover {
             color: #6B8E23;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 2em;
+            cursor: pointer;
+        }
+
+        /* Mobile Styling */
+        @media (max-width: 768px) {
+            nav .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0.95);
+                position: absolute;
+                top: 70px;
+                left: 0;
+                padding: 20px 0;
+            }
+
+            nav .menu.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
         }
 
         .hero {
@@ -97,20 +128,8 @@
             margin: 40px auto 0 auto;
         }
 
-        /* Mobile Optimization */
+        /* Mobile Section Adjustments */
         @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 15px;
-                padding: 20px;
-                align-items: center;
-            }
-
-            nav a {
-                font-size: 1.3em;
-                padding: 15px 20px;
-            }
-
             .hero {
                 padding: 30px 15px;
             }
@@ -128,13 +147,16 @@
 
 <body>
 
-    <!-- Clean Navigation -->
+    <!-- Navigation with Hamburger Menu -->
     <nav>
-        <a href="index.html">Home</a>
-        <a href="tips.html">Planting Tips</a>
-        <a href="gardening101.html">Gardening 101</a>
-        <a href="https://www.etsy.com/shop/DCWGrows" target="_blank">Etsy Shop</a>
-        <a href="https://www.instagram.com/dcwgrows" target="_blank">Instagram</a>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="menu" id="menu">
+            <a href="index.html">Home</a>
+            <a href="tips.html">Planting Tips</a>
+            <a href="gardening101.html">Gardening 101</a>
+            <a href="https://www.etsy.com/shop/DCWGrows" target="_blank">Etsy Shop</a>
+            <a href="https://www.instagram.com/dcwgrows" target="_blank">Instagram</a>
+        </div>
     </nav>
 
     <!-- Hero Section with Logo -->
@@ -163,6 +185,13 @@
     <footer>
         <p>&copy; 2025 DCW Grows | All rights reserved</p>
     </footer>
+
+    <!-- JavaScript for Menu -->
+    <script>
+        function toggleMenu() {
+            document.getElementById('menu').classList.toggle('active');
+        }
+    </script>
 
 </body>
 
