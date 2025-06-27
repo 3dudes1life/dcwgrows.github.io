@@ -104,15 +104,18 @@
             }
         }
 
-        .torn-section {
-            position: relative;
-            padding: 60px 20px;
-            background-color: rgba(255, 255, 255, 0.95);
-            max-width: 1000px;
+        /* Logo Circle Style */
+        .logo-circle {
+            width: 90%;
+            max-width: 750px;
             margin: 40px auto 0 auto;
-            border-radius: 10px;
-            text-align: center;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 5% 100%, 0 85%);
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
         }
 
         img.logo {
@@ -165,7 +168,11 @@
         }
 
         @media (max-width: 768px) {
-            .torn-section, section {
+            .logo-circle {
+                padding: 20px;
+            }
+
+            section {
                 padding: 30px 15px;
             }
 
@@ -200,8 +207,8 @@
         </div>
     </nav>
 
-    <!-- Torn Paper Logo Section -->
-    <div class="torn-section">
+    <!-- Logo Section with Soft Circle -->
+    <div class="logo-circle">
         <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo" class="logo">
     </div>
 
