@@ -104,7 +104,6 @@
             }
         }
 
-        /* Logo Circle Style */
         .logo-circle {
             width: 90%;
             max-width: 750px;
@@ -116,9 +115,11 @@
             justify-content: center;
             align-items: center;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
         }
 
-        img.logo {
+        .logo-shimmer {
             width: 100%;
             max-width: 700px;
             height: 100%;
@@ -126,6 +127,26 @@
             object-position: center;
             filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
             animation: pulse 2s ease-out;
+            position: relative;
+            z-index: 2;
+        }
+
+        .shimmer-effect {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(120deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.1) 100%);
+            animation: shimmer 4s infinite;
+            z-index: 1;
+        }
+
+        @keyframes shimmer {
+            0% { left: -75%; }
+            50% { left: 125%; }
+            100% { left: 125%; }
         }
 
         section {
@@ -207,9 +228,10 @@
         </div>
     </nav>
 
-    <!-- Logo Section with Soft Circle -->
+    <!-- Logo Section with Shimmer -->
     <div class="logo-circle">
-        <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo" class="logo">
+        <div class="shimmer-effect"></div>
+        <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo" class="logo-shimmer">
     </div>
 
     <!-- Welcome Section -->
