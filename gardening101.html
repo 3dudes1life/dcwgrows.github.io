@@ -51,6 +51,7 @@
             font-size: 1.2em;
             font-weight: bold;
             transition: color 0.3s ease;
+            cursor: pointer;
         }
 
         nav a:hover {
@@ -68,6 +69,10 @@
             flex-direction: column;
             margin-top: 10px;
             padding-left: 20px;
+        }
+
+        .submenu.active {
+            display: flex;
         }
 
         .submenu a {
@@ -160,7 +165,7 @@
         <div class="menu" id="menu">
             <a href="tips.html">Planting Tips</a>
             <div>
-                <a href="gardening101.html" onclick="toggleSubmenu(event)">Gardening 101 ▾</a>
+                <a href="#" onclick="toggleSubmenu(event)">Gardening 101 ▾</a>
                 <div class="submenu" id="submenu">
                     <a href="#garden-story">Our Garden Story</a>
                     <a href="#how-we-grow">How We Grow</a>
@@ -212,7 +217,7 @@
         }
 
         function toggleSubmenu(event) {
-            event.preventDefault(); // Prevents link from navigating
+            event.preventDefault(); // Stop link from navigating
             document.getElementById('submenu').classList.toggle('active');
         }
     </script>
