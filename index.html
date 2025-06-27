@@ -18,41 +18,37 @@
             color: #333333;
         }
 
-        header {
+        /* Clean top navigation */
+        nav {
             background-color: rgba(255, 255, 255, 0.95);
-            padding: 20px 20px;
+            padding: 20px 40px;
             display: flex;
             justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            gap: 40px;
             position: sticky;
             top: 0;
             z-index: 10;
-            margin-bottom: 40px;
         }
 
-        a.nav-button {
-            background-color: #6B8E23;
-            color: white;
-            padding: 14px 28px;
+        nav a {
+            color: #333333;
             text-decoration: none;
-            border-radius: 8px;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: color 0.3s ease;
         }
 
-        a.nav-button:hover {
-            background-color: #5A7A1E;
-            transform: scale(1.05);
+        nav a:hover {
+            color: #6B8E23;
         }
 
         .hero {
-            background-color: rgba(255, 255, 255, 0.95);
+            background-color: rgba(255, 255, 255, 0.9);
             text-align: center;
             padding: 60px 20px;
             max-width: 1000px;
-            margin: 0 auto 40px auto;
-            border-radius: 10px; /* ✅ Rounded corners added here */
+            margin: 40px auto;
+            border-radius: 10px;
         }
 
         .hero img {
@@ -101,9 +97,10 @@
 
         /* Mobile Optimization */
         @media (max-width: 768px) {
-            header {
-                padding: 15px;
-                gap: 15px;
+            nav {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
             }
 
             .hero {
@@ -118,9 +115,8 @@
                 font-size: 1.1em;
             }
 
-            a.nav-button {
-                padding: 12px 20px;
-                font-size: 1em;
+            nav a {
+                font-size: 1.1em;
             }
         }
     </style>
@@ -128,14 +124,14 @@
 
 <body>
 
-    <!-- Header with Navigation -->
-    <header>
-        <a href="index.html" class="nav-button">Home</a>
-        <a href="tips.html" class="nav-button">Planting Tips</a>
-        <a href="gardening101.html" class="nav-button">Gardening 101</a>
-        <a href="https://www.etsy.com/shop/DCWGrows" target="_blank" class="nav-button">Etsy Shop</a>
-        <a href="https://www.instagram.com/dcwgrows" target="_blank" class="nav-button">Instagram</a>
-    </header>
+    <!-- Clean Navigation -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="tips.html">Planting Tips</a>
+        <a href="gardening101.html">Gardening 101</a>
+        <a href="https://www.etsy.com/shop/DCWGrows" target="_blank">Etsy Shop</a>
+        <a href="https://www.instagram.com/dcwgrows" target="_blank">Instagram</a>
+    </nav>
 
     <!-- Hero Section with Logo -->
     <div class="hero">
