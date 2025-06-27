@@ -18,18 +18,40 @@
             color: #333333;
         }
 
-        header, section, footer {
-            padding: 60px 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
         header {
             background-color: rgba(255, 255, 255, 0.95);
-            text-align: center;
+            padding: 20px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
-        header img {
+        a.nav-button {
+            background-color: #6B8E23;
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        a.nav-button:hover {
+            background-color: #5A7A1E;
+            transform: scale(1.05);
+        }
+
+        .hero {
+            background-color: rgba(255, 255, 255, 0.95);
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero img {
             width: 100%;
             max-width: 700px;
             height: 100%;
@@ -46,7 +68,9 @@
 
         section {
             background-color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 40px;
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 40px auto;
             border-radius: 10px;
             text-align: center;
         }
@@ -62,43 +86,27 @@
             margin: 0 auto 30px auto;
         }
 
-        .button-group {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 30px;
-        }
-
-        a.button {
-            display: inline-block;
-            background-color: #6B8E23;
-            color: white;
-            padding: 16px 30px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 1.2em;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        a.button:hover {
-            background-color: #5A7A1E;
-            transform: scale(1.05);
-        }
-
         footer {
             background-color: rgba(255, 255, 255, 0.9);
             text-align: center;
+            padding: 30px 20px;
             border-radius: 10px;
+            max-width: 1000px;
+            margin: 40px auto 0 auto;
         }
 
         /* Mobile Optimization */
         @media (max-width: 768px) {
-            header, section, footer {
+            header {
+                padding: 15px;
+                gap: 15px;
+            }
+
+            .hero {
                 padding: 30px 15px;
             }
 
-            header img {
+            .hero img {
                 max-width: 300px;
             }
 
@@ -106,13 +114,9 @@
                 font-size: 1.1em;
             }
 
-            a.button {
-                padding: 14px 24px;
+            a.nav-button {
+                padding: 12px 20px;
                 font-size: 1em;
-            }
-
-            .button-group {
-                gap: 15px;
             }
         }
     </style>
@@ -120,16 +124,21 @@
 
 <body>
 
+    <!-- Header with Navigation -->
     <header>
-        <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo">
-        <div class="button-group">
-            <a href="tips.html" class="button">Planting Tips</a>
-            <a href="gardening101.html" class="button">Gardening 101</a>
-            <a href="https://www.etsy.com/shop/DCWGrows" target="_blank" class="button">Etsy Shop</a>
-            <a href="https://www.instagram.com/dcwgrows" target="_blank" class="button">Instagram</a>
-        </div>
+        <a href="index.html" class="nav-button">Home</a>
+        <a href="tips.html" class="nav-button">Planting Tips</a>
+        <a href="gardening101.html" class="nav-button">Gardening 101</a>
+        <a href="https://www.etsy.com/shop/DCWGrows" target="_blank" class="nav-button">Etsy Shop</a>
+        <a href="https://www.instagram.com/dcwgrows" target="_blank" class="nav-button">Instagram</a>
     </header>
 
+    <!-- Hero Section with Logo -->
+    <div class="hero">
+        <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo">
+    </div>
+
+    <!-- Bar Sections -->
     <section>
         <h1>Welcome to DCW Grows 🌿</h1>
         <p>
@@ -146,9 +155,11 @@
         </p>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 DCW Grows | All rights reserved</p>
     </footer>
 
 </body>
+
 </html>
