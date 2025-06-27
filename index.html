@@ -108,7 +108,7 @@
             width: 90%;
             max-width: 750px;
             margin: 40px auto 0 auto;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.85); /* A little whiter */
             border-radius: 50%;
             padding: 40px;
             display: flex;
@@ -119,7 +119,12 @@
             overflow: hidden;
         }
 
-        .logo-shimmer {
+        .logo-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        img.logo-shimmer {
             width: 100%;
             max-width: 700px;
             height: 100%;
@@ -140,7 +145,8 @@
             height: 100%;
             background: linear-gradient(120deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.1) 100%);
             animation: shimmer 4s infinite;
-            z-index: 1;
+            z-index: 3;
+            pointer-events: none;
         }
 
         @keyframes shimmer {
@@ -228,10 +234,12 @@
         </div>
     </nav>
 
-    <!-- Logo Section with Shimmer -->
+    <!-- Logo Section with Shimmer on Logo Only -->
     <div class="logo-circle">
-        <div class="shimmer-effect"></div>
-        <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo" class="logo-shimmer">
+        <div class="logo-container">
+            <div class="shimmer-effect"></div>
+            <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo" class="logo-shimmer">
+        </div>
     </div>
 
     <!-- Welcome Section -->
