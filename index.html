@@ -15,26 +15,21 @@
             min-height: 100vh;
             background: url('tropical%20background.png') no-repeat center center fixed;
             background-size: cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            padding: 40px 20px;
             color: #333333;
         }
 
-        .box {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 30px 40px;
-            border-radius: 20px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            max-width: 700px;
-            width: 90%;
+        header, section, footer {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
             text-align: center;
         }
 
-        .logo {
+        header img {
             width: 100%;
             max-width: 700px;
             height: 100%;
@@ -45,21 +40,26 @@
         }
 
         @keyframes pulse {
-            0% {
-                transform: scale(0.95);
-                opacity: 0.8;
-            }
+            0% { transform: scale(0.95); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
 
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
+        section {
+            background-color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            text-align: center;
         }
 
         p {
             font-size: 1.4em;
             line-height: 1.8;
-            margin-bottom: 30px;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
         }
 
         .button-group {
@@ -67,9 +67,10 @@
             gap: 20px;
             flex-wrap: wrap;
             justify-content: center;
+            margin-top: 30px;
         }
 
-        a {
+        a.button {
             display: inline-block;
             background-color: #6B8E23;
             color: white;
@@ -80,22 +81,24 @@
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
-        a:hover {
+        a.button:hover {
             background-color: #5A7A1E;
             transform: scale(1.05);
         }
 
+        footer {
+            background-color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            border-radius: 10px;
+        }
+
         /* Mobile Optimization */
         @media (max-width: 768px) {
-            body {
-                gap: 30px;
+            header, section, footer {
+                padding: 30px 15px;
             }
 
-            .box {
-                padding: 20px 15px;
-            }
-
-            .logo {
+            header img {
                 max-width: 300px;
             }
 
@@ -103,7 +106,7 @@
                 font-size: 1.1em;
             }
 
-            a {
+            a.button {
                 padding: 14px 24px;
                 font-size: 1em;
             }
@@ -116,27 +119,36 @@
 </head>
 
 <body>
-    <!-- Logo Box -->
-    <div class="box">
-        <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo" class="logo" />
-    </div>
 
-    <!-- Text & Button Box -->
-    <div class="box">
-        <p>
-            We’re plant lovers on a mission to grow something beautiful — and share it with you! <br /><br />
-            DCW Grows sprouted in 2021 on Etsy, and thanks to your support, it quickly took off.<br /><br />
-            Right now, we specialize in outdoor plants, succulents, and garden favorites — but we’re just getting started! We’re always expanding and can’t wait to bring you even more plants, garden finds, and backyard treasures soon.<br /><br />
-            🌿 Come back often for planting tips, tricks, and behind-the-scenes pics from our garden adventures.<br />
-            💚 Shop our Etsy and follow us on Instagram below.
-        </p>
-
+    <header>
+        <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo">
         <div class="button-group">
-            <a href="https://www.etsy.com/shop/DCWGrows" target="_blank">Visit Our Etsy Shop</a>
-            <a href="https://www.instagram.com/dcwgrows" target="_blank">Follow Us on Instagram</a>
-            <a href="tips.html">Planting Tips & Care</a>
+            <a href="tips.html" class="button">Planting Tips</a>
+            <a href="gardening101.html" class="button">Gardening 101</a>
+            <a href="https://www.etsy.com/shop/DCWGrows" target="_blank" class="button">Etsy Shop</a>
+            <a href="https://www.instagram.com/dcwgrows" target="_blank" class="button">Instagram</a>
         </div>
-    </div>
-</body>
+    </header>
 
+    <section>
+        <h1>Welcome to DCW Grows 🌿</h1>
+        <p>
+            We’re plant lovers on a mission to grow something beautiful — and share it with you!<br><br>
+            DCW Grows sprouted in 2021 on Etsy, and thanks to your support, it quickly took off.<br><br>
+            Right now, we specialize in outdoor plants, succulents, and garden favorites — but we’re just getting started! We’re always expanding and can’t wait to bring you even more plants, garden finds, and backyard treasures soon.
+        </p>
+    </section>
+
+    <section>
+        <h2>Explore More 🌸</h2>
+        <p>
+            Check out our planting tips, browse our Etsy shop, or dive into Gardening 101 to get inspired and grow with us!
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 DCW Grows | All rights reserved</p>
+    </footer>
+
+</body>
 </html>
