@@ -47,14 +47,14 @@
             z-index: 10;
         }
 
-        .menu-left a {
-            color: #333333;
-            text-decoration: none;
-            font-size: 1.8em;
+        .menu-left img {
+            width: 60px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
 
-        .menu-left a:hover {
-            color: #6B8E23;
+        .menu-left img:hover {
+            transform: scale(1.1);
         }
 
         nav .menu {
@@ -227,7 +227,9 @@
     <!-- Navigation with Submenu -->
     <nav>
         <div class="menu-left">
-            <a href="#wizard-section" title="Jump to Garden Wizard">🧙‍♂️</a>
+            <a href="#wizard-section" title="Jump to Garden Wizard">
+                <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo">
+            </a>
         </div>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <div class="menu" id="menu">
