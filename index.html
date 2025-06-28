@@ -6,23 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DCW Grows 🌱</title>
 
-    <!-- Favicon for browser tabs -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png" />
-    <!-- Apple Touch Icon for mobile home screen -->
     <link rel="apple-touch-icon" href="favicon.png">
 
-    <!-- Open Graph Meta Tags for Social Sharing -->
+    <!-- Open Graph -->
     <meta property="og:title" content="DCW Grows 🌱" />
-    <meta property="og:description" content="Join us on our plant journey! Shop, learn, and grow with DCW Grows." />
-    <meta property="og:image" content="dcwgrows-social-preview.png" />
+    <meta property="og:description" content="We’re plant lovers on a mission to grow something beautiful—and share it with you!" />
+    <meta property="og:image" content="Socialmobileshare.png" />
     <meta property="og:url" content="https://www.dcwgrows.com" />
     <meta property="og:type" content="website" />
 
-    <!-- Twitter Card Tags -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="DCW Grows 🌱" />
-    <meta name="twitter:description" content="Join us on our plant journey! Shop, learn, and grow with DCW Grows." />
-    <meta name="twitter:image" content="dcwgrows-social-preview.png" />
+    <meta name="twitter:description" content="We’re plant lovers on a mission to grow something beautiful—and share it with you!" />
+    <meta name="twitter:image" content="Socialmobileshare.png" />
 
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
     <style>
@@ -121,40 +120,6 @@
             }
         }
 
-        .logo-circle {
-            width: 90%;
-            max-width: 750px;
-            margin: 40px auto 0 auto;
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 50%;
-            padding: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .logo-shimmer {
-            width: 100%;
-            max-width: 700px;
-            height: 100%;
-            object-fit: contain;
-            object-position: center;
-            position: relative;
-            z-index: 2;
-            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
-            animation: shimmerLogo 4s infinite linear;
-            background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
-            background-size: 200% 100%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        @keyframes shimmerLogo {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
-        }
-
         section {
             background-color: rgba(255, 255, 255, 0.9);
             padding: 60px 20px;
@@ -175,10 +140,28 @@
             margin: 0 auto 30px auto;
         }
 
-        iframe {
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        .logo-container img {
             width: 100%;
-            border: none;
-            min-height: 700px;
+            max-width: 700px;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+            animation: shimmer 4s infinite linear;
+        }
+
+        @keyframes shimmer {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 1; }
         }
 
         footer {
@@ -190,33 +173,34 @@
             margin: 40px auto 0 auto;
         }
 
-        /* Wizard Animation */
-        .wizard-image {
-            width: 350px;
-            max-width: 100%;
-            position: relative;
-            margin-bottom: 50px;
+        /* Garden Wizard Animation */
+        .wizard-container {
             opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s ease;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
         }
 
-        .wizard-image.active {
+        .wizard-container.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        @media (max-width: 768px) {
-            .logo-circle {
-                padding: 20px;
-            }
+        .wizard-container img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
 
+        @media (max-width: 768px) {
             section {
                 padding: 30px 15px;
             }
 
             p {
                 font-size: 1.1em;
+            }
+
+            .wizard-container img {
+                width: 120px;
             }
         }
     </style>
@@ -233,7 +217,6 @@
         </div>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <div class="menu" id="menu">
-            <a href="index.html">Home</a>
             <a href="tips.html">Planting Tips</a>
             <div>
                 <a href="#" onclick="toggleSubmenu(event)">Gardening 101 ▾</a>
@@ -246,12 +229,13 @@
             </div>
             <a href="https://www.etsy.com/shop/DCWGrows" target="_blank">Etsy Shop</a>
             <a href="https://www.instagram.com/dcwgrows" target="_blank">Instagram</a>
+            <a href="index.html">Home</a>
         </div>
     </nav>
 
     <!-- Logo Section -->
-    <div class="logo-circle">
-        <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo" class="logo-shimmer">
+    <div class="logo-container">
+        <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo">
     </div>
 
     <!-- Welcome Section -->
@@ -263,19 +247,19 @@
         <p>Check out our Etsy shop, explore our Planting Tips, dive into our Gardening 101 page, and don’t be shy—ask the Garden Wizard anything. Let’s grow something awesome together!</p>
     </section>
 
-    <!-- Garden Wizard Section with Animation -->
+    <!-- Garden Wizard Section -->
     <section id="wizard-section">
-        <div style="position: relative; text-align: center;">
-            <img src="GardenWizard.png" alt="Garden Wizard" class="wizard-image" id="wizardImage">
-            <h2 style="margin-top: 0; font-size: 2em;">🧙‍♂️ Meet Your Garden Wizard</h2>
+        <div class="wizard-container" id="wizard-container">
+            <img src="GardenWizard.png" alt="Garden Wizard">
+            <h2>🧙‍♂️ Meet Your Garden Wizard</h2>
         </div>
         <p>Every garden needs a little magic… and that’s where our Garden Wizard comes in.</p>
         <p>Think of them as your plant-powered bestie—here to help you grow the garden of your dreams, answer all your questions, and maybe throw in a few gardening spells along the way. 🪄✨</p>
         <p>Whether you’re wondering why your leaves are droopy, when to water, or if you can grow pumpkins in a kiddie pool (spoiler: yes, but we’ve got tips)—our Garden Wizard is ready to help!</p>
-        <p>No question is too small. No garden is too wild.</p>
-        <p>Ask away. The Garden Wizard loves to talk dirt.</p>
+        <p>No question is too small. No garden is too wild. Ask away. The Garden Wizard loves to talk dirt.</p>
 
-        <iframe src="https://www.chatbase.co/chatbot-iframe/HVeDDdY99TWxWlJj6YXUA" style="min-height: 700px; width: 100%; border: none; margin-top: 30px;"></iframe>
+        <!-- Chatbase iFrame -->
+        <iframe src="https://www.chatbase.co/chatbot-iframe/HVeDDdY99TWxWlJj6YXUA" width="100%" style="height: 100%; min-height: 700px" frameborder="0"></iframe>
     </section>
 
     <!-- Footer -->
@@ -283,7 +267,7 @@
         <p>&copy; 2025 DCW Grows | All rights reserved</p>
     </footer>
 
-    <!-- JavaScript for Menus and Animation -->
+    <!-- JavaScript -->
     <script>
         function toggleMenu() {
             document.getElementById('menu').classList.toggle('active');
@@ -294,15 +278,12 @@
             document.getElementById('submenu').classList.toggle('active');
         }
 
-        // Scroll-triggered Animation
+        // Garden Wizard Animation
         window.addEventListener('scroll', function () {
-            const wizardImage = document.getElementById('wizardImage');
-            const wizardSection = document.getElementById('wizard-section');
-            const sectionPosition = wizardSection.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.2;
-
-            if (sectionPosition < screenPosition) {
-                wizardImage.classList.add('active');
+            const wizard = document.getElementById('wizard-container');
+            const rect = wizard.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                wizard.classList.add('visible');
             }
         });
     </script>
