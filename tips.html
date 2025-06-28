@@ -4,8 +4,26 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Planting Tips 🌱 DCW Grows</title>
+    <title>DCW Grows | Planting Tips 🌱</title>
+
+    <!-- Favicon for browser tabs -->
     <link rel="icon" type="image/png" href="favicon.png" />
+    <!-- Apple Touch Icon for mobile home screen -->
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="DCW Grows | Planting Tips 🌱" />
+    <meta property="og:description" content="Helpful tips for growing your favorite plants from DCW Grows." />
+    <meta property="og:image" content="dcwgrows-social-preview.png" />
+    <meta property="og:url" content="https://www.dcwgrows.com/tips.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="DCW Grows | Planting Tips 🌱" />
+    <meta name="twitter:description" content="Helpful tips for growing your favorite plants from DCW Grows." />
+    <meta name="twitter:image" content="dcwgrows-social-preview.png" />
+
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
     <style>
         body {
@@ -29,15 +47,14 @@
             z-index: 10;
         }
 
-        .menu-left a {
-            color: #333333;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: bold;
+        .menu-left img {
+            width: 60px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
 
-        .menu-left a:hover {
-            color: #6B8E23;
+        .menu-left img:hover {
+            transform: scale(1.1);
         }
 
         nav .menu {
@@ -124,6 +141,12 @@
             margin: 0 auto 30px auto;
         }
 
+        iframe {
+            width: 100%;
+            border: none;
+            min-height: 700px;
+        }
+
         footer {
             background-color: rgba(255, 255, 255, 0.9);
             text-align: center;
@@ -150,10 +173,13 @@
     <!-- Navigation with Submenu -->
     <nav>
         <div class="menu-left">
-            <a href="index.html">Home</a>
+            <a href="index.html#wizard-section" title="Jump to Garden Wizard">
+                <img src="GardenWizard.png" alt="Garden Wizard Icon">
+            </a>
         </div>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <div class="menu" id="menu">
+            <a href="index.html">Home</a>
             <a href="tips.html">Planting Tips</a>
             <div>
                 <a href="#" onclick="toggleSubmenu(event)">Gardening 101 ▾</a>
@@ -169,28 +195,25 @@
         </div>
     </nav>
 
-    <!-- Page Title -->
+    <!-- Planting Tips Section -->
     <section>
-        <h1>Planting Tips & Care 🌱</h1>
-        <p><em>These are the growing tips for the plants that are currently on sale on Etsy.</em></p>
-    </section>
+        <h1>Planting Tips</h1>
+        <h2 style="margin-bottom: 40px;">These are the growing tips for the plants that are currently on sale on Etsy.</h2>
 
-    <!-- Tips Content -->
-    <section>
-        <h2>Calandrinia</h2>
-        <p>Take stem cuttings, plant in well-draining soil, water weekly, or let it self-seed.</p>
+        <p>🌱 <strong>Calandrinia:</strong> Prefers full sun. Water moderately. Can tolerate drought once established. Watch for droopy leaves as a sign of underwatering. Great in hot, sunny areas.</p>
 
-        <h2>Spiny Texas Prickly Pear</h2>
-        <p>Take a pad in spring, let it heal for a few days, then plant upright in drainage soil.</p>
+        <p>🌵 <strong>Succulents:</strong> Thrive in bright light. Water sparingly. Let soil fully dry between waterings. Overwatering is the #1 killer. Use cactus soil for best drainage.</p>
 
-        <h2>Santa Rita Prickly Pear</h2>
-        <p>Same as above — cut, cure, then plant in well-draining soil.</p>
+        <p>🌸 <strong>Plumerias:</strong> Loves sun, needs well-drained soil. Water deeply but infrequently. Watch for leaf drop if underwatered. Prune after blooming for fuller growth.</p>
 
-        <h2>Drosanthemum hispidum ("Purple Rosea Iceplant")</h2>
-        <p>Use cuttings, plant stem-down, water weekly till established, then reduce frequency.</p>
+        <p>🌿 <strong>General Watering Tip:</strong> Water less in winter, more in hot months. Use the finger test—if soil is dry a couple inches down, it’s time to water. Group plants with similar watering needs.</p>
 
-        <h2>Senecio mandraliscae ("Blue Chalk Sticks")</h2>
-        <p>Propagate from cuttings and water weekly, or allow seedlings to self-populate.</p>
+        <p>🌞 <strong>General Sun Tip:</strong> Most of our plants need at least 6 hours of direct sun to thrive. If leaves are yellowing, it may need more light.</p>
+
+        <p>✂️ <strong>General Trimming Tip:</strong> Trim dead or damaged leaves regularly to promote healthy new growth. Prune for shape after blooming seasons.</p>
+
+        <p>🛒 Visit our <a href="https://www.etsy.com/shop/DCWGrows" target="_blank">Etsy shop</a> for plants ready to ship!</p>
+
     </section>
 
     <!-- Footer -->
@@ -205,7 +228,7 @@
         }
 
         function toggleSubmenu(event) {
-            event.preventDefault(); // Stop link from navigating
+            event.preventDefault();
             document.getElementById('submenu').classList.toggle('active');
         }
     </script>
