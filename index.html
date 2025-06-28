@@ -147,14 +147,23 @@
             margin-top: 40px;
         }
 
-        .logo-container img {
+        .logo-circle {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: shimmer 4s infinite linear;
+        }
+
+        .logo-circle img {
             width: 100%;
             max-width: 700px;
             height: 100%;
             object-fit: contain;
             object-position: center;
             filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
-            animation: shimmer 4s infinite linear;
         }
 
         @keyframes shimmer {
@@ -234,7 +243,9 @@
 
     <!-- Logo Section -->
     <div class="logo-container">
-        <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo">
+        <div class="logo-circle">
+            <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo">
+        </div>
     </div>
 
     <!-- Welcome Section -->
