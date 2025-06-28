@@ -170,6 +170,12 @@
             margin: 0 auto 30px auto;
         }
 
+        iframe {
+            width: 100%;
+            border: none;
+            min-height: 700px;
+        }
+
         footer {
             background-color: rgba(255, 255, 255, 0.9);
             text-align: center;
@@ -177,21 +183,6 @@
             border-radius: 10px;
             max-width: 1000px;
             margin: 40px auto 0 auto;
-        }
-
-        .wizard-button {
-            background-color: #6B8E23;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .wizard-button:hover {
-            background-color: #4d6f1a;
         }
 
         @media (max-width: 768px) {
@@ -247,11 +238,11 @@
         <p>View our Etsy shop, check out our planting tips, and explore our Gardening 101 page to grow along with us!</p>
     </section>
 
-    <!-- Garden Wizard Section -->
+    <!-- Garden Wizard Section with iFrame -->
     <section>
         <h2>🧙‍♂️ Ask Our Garden Wizard!</h2>
-        <p>Need quick planting advice? Our magical Garden Wizard is here to help — just click below to start chatting!</p>
-        <button class="wizard-button" onclick="window.chatbase('toggle')">Ask Our Garden Wizard</button>
+        <p>Need quick planting advice? Our magical Garden Wizard is here to help — start chatting below!</p>
+        <iframe src="https://www.chatbase.co/chatbot-iframe/HVeDDdY99TWxWlJj6YXUA" style="min-height: 700px;"></iframe>
     </section>
 
     <!-- Footer -->
@@ -270,9 +261,6 @@
             document.getElementById('submenu').classList.toggle('active');
         }
     </script>
-
-    <!-- Correct Chatbase Chatbot Script -->
-    <script src="https://www.chatbase.co/embed.min.js" chatbotId="HVeDDdY99TWxWlJj6YXUA" domain="www.chatbase.co" defer></script>
 
 </body>
 
