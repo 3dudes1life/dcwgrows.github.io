@@ -191,6 +191,22 @@
             margin: 40px auto 0 auto;
         }
 
+        /* Wizard Animation */
+        .wizard-image {
+            width: 350px;
+            max-width: 100%;
+            position: relative;
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        .wizard-image.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         @media (max-width: 768px) {
             .logo-circle {
                 padding: 20px;
@@ -244,10 +260,10 @@
         <p>View our Etsy shop, check out our planting tips, and explore our Gardening 101 page to grow along with us!</p>
     </section>
 
-    <!-- Garden Wizard Section with Image and Chat -->
-    <section>
+    <!-- Garden Wizard Section with Animation -->
+    <section id="wizard-section">
         <div style="position: relative; text-align: center;">
-            <img src="GardenWizard.png" alt="Garden Wizard" style="width: 250px; max-width: 100%; position: relative; margin-bottom: -30px; z-index: 2;">
+            <img src="GardenWizard.png" alt="Garden Wizard" class="wizard-image" id="wizardImage">
             <h2 style="margin-top: 0; font-size: 2em;">🧙‍♂️ Meet Your Garden Wizard</h2>
         </div>
         <p>Every garden needs a little magic… and that’s where our Garden Wizard comes in.</p>
@@ -264,7 +280,7 @@
         <p>&copy; 2025 DCW Grows | All rights reserved</p>
     </footer>
 
-    <!-- JavaScript for Menus -->
+    <!-- JavaScript for Menus and Animation -->
     <script>
         function toggleMenu() {
             document.getElementById('menu').classList.toggle('active');
@@ -274,6 +290,18 @@
             event.preventDefault();
             document.getElementById('submenu').classList.toggle('active');
         }
+
+        // Scroll-triggered Animation
+        window.addEventListener('scroll', function () {
+            const wizardImage = document.getElementById('wizardImage');
+            const wizardSection = document.getElementById('wizard-section');
+            const sectionPosition = wizardSection.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+
+            if (sectionPosition < screenPosition) {
+                wizardImage.classList.add('active');
+            }
+        });
     </script>
 
 </body>
