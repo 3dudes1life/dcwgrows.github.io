@@ -4,8 +4,26 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gardening 101 🌱 DCW Grows</title>
+    <title>DCW Grows | Gardening 101 🌱</title>
+
+    <!-- Favicon for browser tabs -->
     <link rel="icon" type="image/png" href="favicon.png" />
+    <!-- Apple Touch Icon for mobile home screen -->
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="DCW Grows | Gardening 101 🌱" />
+    <meta property="og:description" content="Learn to grow with DCW Grows. Gardening 101 for all levels." />
+    <meta property="og:image" content="dcwgrows-social-preview.png" />
+    <meta property="og:url" content="https://www.dcwgrows.com/gardening101.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="DCW Grows | Gardening 101 🌱" />
+    <meta name="twitter:description" content="Learn to grow with DCW Grows. Gardening 101 for all levels." />
+    <meta name="twitter:image" content="dcwgrows-social-preview.png" />
+
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
     <style>
         body {
@@ -29,15 +47,14 @@
             z-index: 10;
         }
 
-        .menu-left a {
-            color: #333333;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: bold;
+        .menu-left img {
+            width: 60px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
 
-        .menu-left a:hover {
-            color: #6B8E23;
+        .menu-left img:hover {
+            transform: scale(1.1);
         }
 
         nav .menu {
@@ -113,7 +130,7 @@
             text-align: center;
         }
 
-        h1, h2, h3 {
+        h1, h2 {
             text-align: center;
         }
 
@@ -122,15 +139,6 @@
             line-height: 1.8;
             max-width: 800px;
             margin: 0 auto 30px auto;
-        }
-
-        ul {
-            text-align: left;
-            max-width: 800px;
-            margin: 0 auto 30px auto;
-            font-size: 1.4em;
-            line-height: 1.8;
-            padding-left: 20px;
         }
 
         footer {
@@ -147,7 +155,7 @@
                 padding: 30px 15px;
             }
 
-            p, ul {
+            p {
                 font-size: 1.1em;
             }
         }
@@ -159,18 +167,21 @@
     <!-- Navigation with Submenu -->
     <nav>
         <div class="menu-left">
-            <a href="index.html">Home</a>
+            <a href="index.html#wizard-section" title="Jump to Garden Wizard">
+                <img src="GardenWizard.png" alt="Garden Wizard Icon">
+            </a>
         </div>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <div class="menu" id="menu">
+            <a href="index.html">Home</a>
             <a href="tips.html">Planting Tips</a>
             <div>
                 <a href="#" onclick="toggleSubmenu(event)">Gardening 101 ▾</a>
                 <div class="submenu" id="submenu">
-                    <a href="#garden-story">Our Garden Story</a>
-                    <a href="#how-we-grow">How We Grow</a>
-                    <a href="#miracle-gro">Why No Miracle-Gro</a>
-                    <a href="#our-goal">Our Goal</a>
+                    <a href="gardening101.html#garden-story">Our Garden Story</a>
+                    <a href="gardening101.html#how-we-grow">How We Grow</a>
+                    <a href="gardening101.html#miracle-gro">Why No Miracle-Gro</a>
+                    <a href="gardening101.html#our-goal">Our Goal</a>
                 </div>
             </div>
             <a href="https://www.etsy.com/shop/DCWGrows" target="_blank">Etsy Shop</a>
@@ -178,15 +189,12 @@
         </div>
     </nav>
 
-    <!-- Page Title -->
-    <section>
-        <h1>Gardening 101 🌱</h1>
-        <p><em>Learn to grow with us or master your skills.</em></p>
-    </section>
-
-    <!-- Our Garden Story -->
+    <!-- Gardening 101 Content -->
     <section id="garden-story">
-        <h2>🌱 Our Garden Story</h2>
+        <h1>Gardening 101</h1>
+        <h2>Learn to grow with us or master your skills</h2>
+
+        <h2 style="margin-top: 60px;">🌱 Our Garden Story</h2>
         <p>We grow because it’s in our blood.</p>
         <p>Will grew up surrounded by monster gardens—his grandpa sold pumpkins to the local community, and Will spent his childhood working on his uncle’s farm. Caleb has always loved plants and being part of the garden, and his family’s farm roots go back to Texas. Daniel has always had a love for plants too, but growing up in Reno’s high desert made it a lot harder to keep things alive.</p>
         <p>When the three of us first came together—even just as friends—our garden adventure began in the smallest space: a little plot tucked between two driveways in La Mesa. But we made it work. Daniel overgrew his entire front yard, experimenting and growing anything he can.</p>
@@ -194,41 +202,43 @@
         <p>We’re here to share what we know and how we grow so you can do it at home too. Feed yourself, your family, and your friends. It’s possible. And it’s worth it.</p>
     </section>
 
-    <!-- How We Grow -->
     <section id="how-we-grow">
         <h2>🌿 How We Grow</h2>
         <p>Living in Southern California, we’ve had to get creative with our garden. Our yard is full of hard, compacted clay soil that can barely grow grass—so raised beds were the move. We invested in high-quality raised beds with a 20-year warranty. They’re not a sponsor, but we love Vego Garden beds—they have a layer of foam between the walls that helps keep plant roots cooler, unlike those thin metal bins from the big box stores that can heat up fast.</p>
+
         <p>When you’re thinking about starting a garden, remember these three magic words:</p>
         <p>🌱 Soil, ☀️ Sun, 💧 Water.</p>
 
-        <h3>🌱 Soil</h3>
-        <p>Soil is everything. Sure, plants need sun and water, but if you don’t get the soil right, the whole thing falls apart. For us, soil is like science.</p>
-        <p>We start with basic garden soil from the hardware store as the foundation. Then we mix in rich compost, and dirt straight from our chicken run. That combo builds living, nutrient-packed soil where plants just flourish.</p>
+        <p>🌱 <strong>Soil</strong><br>
+            Soil is everything. Sure, plants need sun and water, but if you don’t get the soil right, the whole thing falls apart. For us, soil is like science.
+            We start with basic garden soil from the hardware store as the foundation. Then we mix in rich compost, and dirt straight from our chicken run. That combo builds living, nutrient-packed soil where plants just flourish.
+        </p>
 
-        <h3>☀️ Sun</h3>
-        <p>Your garden will need a ton of sun—at least 7 hours of full sun a day to really produce, especially for fruits and veggies.</p>
-        <p>In the hottest parts of summer, our garden actually benefits from a little afternoon shade thanks to two big palm trees. This helps when temps hit 117°F because most plants stop growing over 90°F. Photosynthesis slows way down in extreme heat, and shade can save your harvest.</p>
+        <p>☀️ <strong>Sun</strong><br>
+            Your garden will need a ton of sun—at least 7 hours of full sun a day to really produce, especially for fruits and veggies.
+            In the hottest parts of summer, our garden actually benefits from a little afternoon shade thanks to two big palm trees. This helps when temps hit 117°F because most plants stop growing over 90°F. Photosynthesis slows way down in extreme heat, and shade can save your harvest.
+        </p>
 
-        <h3>💧 Water</h3>
-        <p>Watering will ramp up as your plants grow.</p>
-        <ul>
-            <li>Seedlings: Just need to stay damp.</li>
-            <li>Big plants (like pumpkins or corn): It’s time to WATER.</li>
-        </ul>
-        <p>While it’s possible to overwater, we find that most people actually don’t water enough, especially with heavy feeders.</p>
-        <p>We group our garden into watering zones:</p>
-        <ul>
-            <li>Corn, Watermelon, and Pumpkins: These love water and share the same heavy-watering zone.</li>
-            <li>Peppers and Flowers: These are in a lighter-watering zone since they prefer to dry out a bit between drinks.</li>
-        </ul>
-        <p>Watching each plant and adjusting based on their needs is key. Trust us—plants will tell you when they’re thirsty.</p>
+        <p>💧 <strong>Water</strong><br>
+            Watering will ramp up as your plants grow.
+            <ul style="text-align: left; display: inline-block;">
+                <li>Seedlings: Just need to stay damp.</li>
+                <li>Big plants (like pumpkins or corn): It’s time to WATER.</li>
+            </ul>
+            While it’s possible to overwater, we find that most people actually don’t water enough, especially with heavy feeders.
+            <br><br>
+            We group our garden into watering zones:
+            <ul style="text-align: left; display: inline-block;">
+                <li>Corn, Watermelon, and Pumpkins: These love water and share the same heavy-watering zone.</li>
+                <li>Peppers and Flowers: These are in a lighter-watering zone since they prefer to dry out a bit between drinks.</li>
+            </ul>
+            Watching each plant and adjusting based on their needs is key. Trust us—plants will tell you when they’re thirsty.
+        </p>
     </section>
 
-    <!-- Miracle-Gro Section -->
     <section id="miracle-gro">
         <h2>🚫 Why We Don’t Use Miracle-Gro</h2>
-        <p>STOP!</p>
-        <p>We don’t use Miracle-Gro in our garden—and here’s why.</p>
+        <p>STOP! We don’t use Miracle-Gro in our garden—and here’s why.</p>
         <p>If it’s a plant we aren’t going to eat (like our bamboo, tropicals, plumerias, houseplants, etc.)—sure, Miracle-Gro it up. But when it comes to food? No thanks.</p>
         <p>We want our garden to be cleaner than most, and that’s why we skip Miracle-Gro and use MaxiGro instead.</p>
 
@@ -239,28 +249,26 @@
         <p>Exception? Our pumpkins. Since we don’t eat them, we MaxiGro those bad boys all summer long—because pumpkins LOVE food, and we LOVE pumpkins. 🎃</p>
 
         <h3>🌿 MaxiGro vs. Miracle-Gro: Quick Comparison</h3>
-        <ul>
-            <li><strong>✅ Why We Prefer MaxiGro:</strong></li>
+        <p><strong>✅ Why We Prefer MaxiGro:</strong></p>
+        <ul style="text-align: left; display: inline-block;">
             <li>No Urea Nitrogen: Uses nitrate-based nitrogen, which is safer and doesn’t burn plants or hurt your soil’s microbiome.</li>
             <li>Hydroponic-Grade Purity: Clean, precise nutrients with fewer fillers.</li>
             <li>Better Mineral Balance: Less salt buildup over time compared to cheaper fertilizers.</li>
             <li>Transparent Ingredients: Trusted by food growers who care about what’s going into their soil.</li>
         </ul>
 
-        <ul>
-            <li><strong>🚫 Miracle-Gro Concerns:</strong></li>
+        <p><strong>🚫 Miracle-Gro Concerns:</strong></p>
+        <ul style="text-align: left; display: inline-block;">
             <li>Contains Urea Nitrogen: Can leach into groundwater and damage beneficial soil life.</li>
             <li>High Salt Content: Leads to salt buildup that’s tough on long-term gardens.</li>
             <li>Fast Visual Growth, Not Soil Health: Great for show plants, not the best for nutrient-dense food.</li>
         </ul>
 
-        <h3>💡 Bottom Line:</h3>
-        <p>If you care about what you’re feeding yourself, your family, and your garden—MaxiGro is the better choice.</p>
-        <p>It’s not 100% organic, but it’s way more aligned with mindful, sustainable gardening than Miracle-Gro.</p>
-        <p>You don’t need to use it forever—just enough to get your garden going.</p>
+        <p><strong>💡 Bottom Line:</strong> If you care about what you’re feeding yourself, your family, and your garden—MaxiGro is the better choice.
+            It’s not 100% organic, but it’s way more aligned with mindful, sustainable gardening than Miracle-Gro. You don’t need to use it forever—just enough to get your garden going.
+        </p>
     </section>
 
-    <!-- Our Goal -->
     <section id="our-goal">
         <h2>🌱 Our Goal</h2>
         <p>Our goal is simple — we want to help you succeed at gardening right at home. Growing your own food can save you money, help you eat better, boost your mental health (there’s just something magical about getting your hands in the dirt), and honestly, it’s a lot of fun to learn along the way.</p>
@@ -281,7 +289,7 @@
         }
 
         function toggleSubmenu(event) {
-            event.preventDefault(); // Stop link from navigating
+            event.preventDefault();
             document.getElementById('submenu').classList.toggle('active');
         }
     </script>
