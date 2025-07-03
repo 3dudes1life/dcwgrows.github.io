@@ -124,25 +124,6 @@
             text-align: center;
         }
 
-        .category-buttons {
-            margin-bottom: 30px;
-        }
-
-        .category-buttons button {
-            background-color: #6B8E23;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 5px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-        }
-
-        .category-buttons button:hover {
-            background-color: #8DC63F;
-        }
-
         .plant-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -162,6 +143,41 @@
             transform: translateY(-5px);
         }
 
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+            text-align: left;
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: black;
+        }
+
         footer {
             background-color: rgba(255, 255, 255, 0.9);
             text-align: center;
@@ -175,7 +191,6 @@
 
 <body>
 
-    <!-- Navigation -->
     <nav>
         <div class="menu-left">
             <a href="index.html#wizard-section" title="Jump to Garden Wizard">
@@ -192,45 +207,40 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section>
         <h1>🌿 Growing Guide 🌿</h1>
         <p>Explore our plant growing guides and learn how to grow your own food!</p>
     </section>
 
-    <!-- Category Buttons -->
-    <section class="category-buttons">
-        <button onclick="alert('Filter coming soon!')">All</button>
-        <button onclick="alert('Filter coming soon!')">Fruits</button>
-        <button onclick="alert('Filter coming soon!')">Vegetables</button>
-        <button onclick="alert('Filter coming soon!')">Herbs</button>
-        <button onclick="alert('Filter coming soon!')">Succulents</button>
-    </section>
-
-    <!-- Plant Cards -->
     <section class="plant-grid">
-        <div class="plant-card" onclick="alert('Tomato Guide Coming Soon!')"><h2>🍅 Tomato</h2></div>
-        <div class="plant-card" onclick="alert('Jalapeño Guide Coming Soon!')"><h2>🌶️ Jalapeño</h2></div>
-        <div class="plant-card" onclick="alert('Bell Pepper Guide Coming Soon!')"><h2>🫑 Bell Pepper</h2></div>
-        <div class="plant-card" onclick="alert('Onion Guide Coming Soon!')"><h2>🧅 Onion</h2></div>
-        <div class="plant-card" onclick="alert('Carrot Guide Coming Soon!')"><h2>🥕 Carrot</h2></div>
-        <div class="plant-card" onclick="alert('Sweet Corn Guide Coming Soon!')"><h2>🌽 Sweet Corn</h2></div>
-        <div class="plant-card" onclick="alert('Basil Guide Coming Soon!')"><h2>🌿 Basil</h2></div>
-        <div class="plant-card" onclick="alert('Watermelon Guide Coming Soon!')"><h2>🍉 Watermelon</h2></div>
-        <div class="plant-card" onclick="alert('Pumpkin Guide Coming Soon!')"><h2>🎃 Pumpkin</h2></div>
-        <div class="plant-card" onclick="alert('Cucumber Guide Coming Soon!')"><h2>🥒 Cucumber</h2></div>
-        <div class="plant-card" onclick="alert('Potato Guide Coming Soon!')"><h2>🥔 Potato</h2></div>
-        <div class="plant-card" onclick="alert('Fennel Guide Coming Soon!')"><h2>🌿 Fennel</h2></div>
-        <div class="plant-card" onclick="alert('Strawberry Guide Coming Soon!')"><h2>🍓 Strawberry</h2></div>
-        <div class="plant-card" onclick="alert('Blackberry & Raspberry Guide Coming Soon!')"><h2>🍇 Blackberries & Raspberries</h2></div>
-        <div class="plant-card" onclick="alert('Green Beans Guide Coming Soon!')"><h2>🫘 Green Beans</h2></div>
-        <div class="plant-card" onclick="alert('Garlic Guide Coming Soon!')"><h2>🧄 Garlic</h2></div>
-        <div class="plant-card" onclick="alert('Pineapple Guide Coming Soon!')"><h2>🍍 Pineapple</h2></div>
-        <div class="plant-card" onclick="alert('Dragon Fruit Guide Coming Soon!')"><h2>🐉 Dragon Fruit</h2></div>
-        <div class="plant-card" onclick="alert('Pea Guide Coming Soon!')"><h2>🟢 Peas</h2></div>
+        <div class="plant-card" onclick="openModal('tomato')"><h2>🍅 Tomato</h2></div>
+        <div class="plant-card" onclick="openModal('jalapeno')"><h2>🌶️ Jalapeño</h2></div>
     </section>
 
-    <!-- Footer -->
+    <div id="tomato" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('tomato')">&times;</span>
+            <h2>🍅 Tomato Growing Guide</h2>
+            <p><strong>What You Need:</strong><br>Full Sun, Well-draining soil, 5-gallon container, Support, Deep watering, Calcium-rich fertilizer</p>
+            <p><strong>Best Planting Times:</strong><br>South: Mar-Apr & Aug-Sep<br>West: Apr-May<br>Midwest: Late Apr-May<br>NE: May-Jun<br>PNW: May-Jun</p>
+            <p><strong>How to Grow:</strong><br>Plant Deep, Water Regularly, Feed Every 2-3 Weeks, Prune Suckers, Support Early</p>
+            <p><strong>When to Harvest:</strong><br>Fully colored, Slightly soft, Pick regularly</p>
+            <p><strong>Pro Tip:</strong> Start seeds indoors 6-8 weeks before the last frost date.</p>
+        </div>
+    </div>
+
+    <div id="jalapeno" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('jalapeno')">&times;</span>
+            <h2>🌶️ Jalapeño Growing Guide</h2>
+            <p><strong>What You Need:</strong><br>Full Sun, Good Soil, 3-5 gallon pot, Even Moisture, Optional Support, Balanced Fertilizer</p>
+            <p><strong>Best Planting Times:</strong><br>South: Mar-Apr & Aug-Sep<br>West: Apr-May<br>Midwest: Late Apr-May<br>NE: May-Jun<br>PNW: May-Jun</p>
+            <p><strong>How to Grow:</strong><br>Start Indoors (Optional), Plant Deep, Water Evenly, Feed Every 2-3 Weeks, Provide Support, Watch for Pests</p>
+            <p><strong>When to Harvest:</strong><br>Green: Firm, Shiny, 3-4 inches<br>Red: Sweeter & Spicier</p>
+            <p><strong>Pro Tip:</strong> Mulch to retain moisture and prevent weeds.</p>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2025 DCW Grows | All rights reserved</p>
     </footer>
@@ -239,8 +249,15 @@
         function toggleMenu() {
             document.getElementById('menu').classList.toggle('active');
         }
+
+        function openModal(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
     </script>
 
 </body>
-
 </html>
