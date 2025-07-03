@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growing Guide | DCW Grows 🌱</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GFB1YDW450"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-GFB1YDW450');
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Growing Guide | DCW Grows 🌱" />
+    <meta property="og:description" content="Explore our plant growing guides and learn how to grow your own food!" />
+    <meta property="og:image" content="Socialmobileshare.png" />
+    <meta property="og:url" content="https://www.dcwgrows.com/growingguide.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Growing Guide | DCW Grows 🌱" />
+    <meta name="twitter:description" content="Explore our plant growing guides and learn how to grow your own food!" />
+    <meta name="twitter:image" content="Socialmobileshare.png" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('tropical%20background.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #333333;
+        }
+
+        nav {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .menu-left img {
+            width: 60px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-left img:hover {
+            transform: scale(1.1);
+        }
+
+        nav .menu {
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            color: #333333;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: #6B8E23;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 2em;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                right: 20px;
+                width: auto;
+                background-color: rgba(255, 255, 255, 0.95);
+                padding: 20px 30px;
+                border-radius: 10px;
+                text-align: center;
+            }
+
+            nav .menu.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        section {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .category-buttons {
+            margin-bottom: 30px;
+        }
+
+        .category-buttons button {
+            background-color: #6B8E23;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .category-buttons button:hover {
+            background-color: #8DC63F;
+        }
+
+        .plant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .plant-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .plant-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .plant-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            max-width: 1200px;
+            margin: 40px auto 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="menu-left">
+            <a href="index.html#wizard-section" title="Jump to Garden Wizard">
+                <img src="GardenWizard.png" alt="Garden Wizard Icon">
+            </a>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="menu" id="menu">
+            <a href="tips.html">Planting Tips</a>
+            <a href="growingguide.html">Growing Guide</a>
+            <a href="https://www.etsy.com/shop/DCWGrows" target="_blank">Etsy Shop</a>
+            <a href="https://www.instagram.com/dcwgrows" target="_blank">Instagram</a>
+            <a href="index.html">Home</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section>
+        <h1>🌿 Growing Guide 🌿</h1>
+        <p>Explore our plant growing guides and learn how to grow your own food!</p>
+    </section>
+
+    <!-- Category Buttons -->
+    <section class="category-buttons">
+        <button onclick="alert('Filter coming soon!')">All</button>
+        <button onclick="alert('Filter coming soon!')">Fruits</button>
+        <button onclick="alert('Filter coming soon!')">Vegetables</button>
+        <button onclick="alert('Filter coming soon!')">Herbs</button>
+        <button onclick="alert('Filter coming soon!')">Succulents</button>
+    </section>
+
+    <!-- Plant Cards -->
+    <section class="plant-grid">
+        <div class="plant-card" onclick="alert('Tomato Guide Coming Soon!')">
+            <img src="tomato.png" alt="Tomato">
+            <h2>🍅 Tomato</h2>
+        </div>
+        <div class="plant-card" onclick="alert('Jalapeño Guide Coming Soon!')">
+            <img src="jalapeno.png" alt="Jalapeño">
+            <h2>🌶️ Jalapeño</h2>
+        </div>
+        <div class="plant-card" onclick="alert('Bell Pepper Guide Coming Soon!')">
+            <img src="bellpepper.png" alt="Bell Pepper">
+            <h2>🫑 Bell Pepper</h2>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 DCW Grows | All rights reserved</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('menu').classList.toggle('active');
+        }
+    </script>
+
+</body>
+
+</html>
