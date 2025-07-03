@@ -65,6 +65,12 @@
             transform: scale(1.1);
         }
 
+        .menu-toggle {
+            display: none;
+            font-size: 2em;
+            cursor: pointer;
+        }
+
         .menu {
             display: flex;
             gap: 30px;
@@ -113,14 +119,8 @@
             display: block;
         }
 
-        .menu-toggle {
-            display: none;
-            font-size: 2em;
-            cursor: pointer;
-        }
-
         @media (max-width: 768px) {
-            nav .menu {
+            .menu {
                 display: none;
                 flex-direction: column;
                 position: absolute;
@@ -133,12 +133,33 @@
                 text-align: center;
             }
 
-            nav .menu.active {
+            .menu.active {
                 display: flex;
             }
 
             .menu-toggle {
                 display: block;
+            }
+
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+                border-radius: 0;
+                background-color: transparent;
+                padding: 0;
+            }
+
+            .dropdown-content a {
+                padding: 8px 0;
+            }
+
+            .dropdown .dropdown-content {
+                display: none;
+                flex-direction: column;
+            }
+
+            .dropdown.active .dropdown-content {
+                display: flex;
             }
         }
 
@@ -217,10 +238,10 @@
             </a>
         </div>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <div class="menu">
+        <div class="menu" id="mobileMenu">
             <a href="growingguide.html">Growing Guide</a>
-            <div class="dropdown">
-                <a href="gardening101.html">Gardening 101 ▾</a>
+            <div class="dropdown" id="dropdownMenu">
+                <a href="#" onclick="toggleDropdown(event)">Gardening 101 ▾</a>
                 <div class="dropdown-content">
                     <a href="gardening101.html#ourgardenstory">Our Garden Story</a>
                     <a href="gardening101.html#howwegrow">How We Grow</a>
@@ -235,18 +256,19 @@
     </nav>
 </header>
 
-<!-- Add your page content here -->
-
-<!-- Mobile Menu Toggle Script -->
+<!-- Mobile Menu Script -->
 <script>
     function toggleMenu() {
-        const menu = document.querySelector('.menu');
+        const menu = document.getElementById('mobileMenu');
         menu.classList.toggle('active');
     }
-</script>
 
-</body>
-</html> 
+    function toggleDropdown(event) {
+        event.preventDefault();
+        const dropdown = document.getElementById('dropdownMenu');
+        dropdown.classList.toggle('active');
+    }
+</script>
 
     <!-- Gardening 101 Hero -->
 <section>
