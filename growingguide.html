@@ -50,91 +50,117 @@
         }
 
         nav {
-            background-color: rgba(255, 255, 255, 0.95);
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
 
-        .logo img {
-            width: 60px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
+.menu-toggle {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+}
 
-        .logo img:hover {
-            transform: scale(1.1);
-        }
+.menu {
+    display: flex;
+    gap: 30px;
+}
 
-        .menu {
-            display: flex;
-            gap: 30px;
-        }
+nav a {
+    color: #333333;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
 
-        nav a {
-            color: #333333;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
+nav a:hover {
+    color: #6B8E23;
+}
 
-        nav a:hover {
-            color: #6B8E23;
-        }
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
 
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.95);
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1;
+}
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: rgba(255, 255, 255, 0.95);
-            min-width: 200px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            z-index: 1;
-        }
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333333;
+    font-weight: normal;
+}
 
-        .dropdown-content a {
-            display: block;
-            padding: 12px 16px;
-            text-decoration: none;
-            color: #333333;
-            font-weight: normal;
-        }
+.dropdown-content a:hover {
+    background-color: #f0f0f0;
+}
 
-        .dropdown-content a:hover {
-            background-color: #f0f0f0;
-        }
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+@media (max-width: 768px) {
+    nav {
+        flex-direction: row;
+    }
 
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: auto;
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 20px 30px;
+        border-radius: 10px;
+        text-align: center;
+    }
 
-            .menu {
-                flex-direction: column;
-                gap: 15px;
-                width: 100%;
-            }
+    .menu.active {
+        display: flex;
+    }
 
-            .dropdown-content {
-                position: static;
-                box-shadow: none;
-            }
-        }
+    .menu-toggle {
+        display: block;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background-color: transparent;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    .dropdown-content a {
+        padding: 8px 0;
+    }
+
+    .dropdown .dropdown-content {
+        display: none;
+        flex-direction: column;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: flex;
+    }
+}
 
         .section-header {
             background-color: rgba(255, 255, 255, 0.9);
