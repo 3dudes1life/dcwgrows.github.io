@@ -184,22 +184,23 @@
 <body>
 
     <!-- Navigation with Submenu -->
+<!-- Header -->
+<header>
     <nav>
-        <div class="menu-left">
-            <a href="index.html#wizard-section" title="Jump to Garden Wizard">
-                <img src="GardenWizard.png" alt="Garden Wizard Icon">
+        <div class="logo">
+            <a href="wizard.html">
+                <img src="GardenWizard.png" alt="Garden Wizard">
             </a>
         </div>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <div class="menu" id="menu">
-            <a href="tips.html">Planting Tips</a>
-            <div>
-                <a href="#" onclick="toggleSubmenu(event)">Gardening 101 ▾</a>
-                <div class="submenu" id="submenu">
-                    <a href="gardening101.html#garden-story">Our Garden Story</a>
-                    <a href="gardening101.html#how-we-grow">How We Grow</a>
-                    <a href="gardening101.html#miracle-gro">Why No Miracle-Gro</a>
-                    <a href="gardening101.html#our-goal">Our Goal</a>
+        <div class="menu">
+            <a href="growingguide.html">Growing Guide</a>
+            <div class="dropdown">
+                <a href="gardening101.html">Gardening 101 ▾</a>
+                <div class="dropdown-content">
+                    <a href="gardening101.html#ourgardenstory">Our Garden Story</a>
+                    <a href="gardening101.html#howwegrow">How We Grow</a>
+                    <a href="gardening101.html#whynomiraclegro">Why No Miracle-Gro</a>
+                    <a href="gardening101.html#ourgoal">Our Goal</a>
                 </div>
             </div>
             <a href="https://www.etsy.com/shop/DCWGrows" target="_blank">Etsy Shop</a>
@@ -207,6 +208,7 @@
             <a href="index.html">Home</a>
         </div>
     </nav>
+</header>
 
     <!-- Gardening 101 Hero -->
     <section>
