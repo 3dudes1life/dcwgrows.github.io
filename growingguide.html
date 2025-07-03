@@ -60,6 +60,16 @@
             z-index: 10;
         }
 
+        .logo img {
+            width: 60px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.1);
+        }
+
         .menu-toggle {
             display: none;
             font-size: 2em;
@@ -117,6 +127,14 @@
         @media (max-width: 768px) {
             nav {
                 flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .menu-toggle {
+                display: block;
+                cursor: pointer;
+                font-size: 2em;
             }
 
             .menu {
@@ -125,19 +143,15 @@
                 position: absolute;
                 top: 70px;
                 right: 20px;
-                width: auto;
                 background-color: rgba(255, 255, 255, 0.95);
                 padding: 20px 30px;
                 border-radius: 10px;
                 text-align: center;
+                z-index: 20;
             }
 
             .menu.active {
                 display: flex;
-            }
-
-            .menu-toggle {
-                display: block;
             }
 
             .dropdown-content {
@@ -259,7 +273,7 @@
     }
 </script>
 
-<!-- Section Header -->
+<!-- Growing Guide Content -->
 <div class="section-header">
     <h1>🌿 Growing Guide 🌿</h1>
     <p>Explore our plant growing guides and learn how to grow your own food!</p>
