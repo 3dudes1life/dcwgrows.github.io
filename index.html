@@ -9,11 +9,10 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GFB1YDW450"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-GFB1YDW450');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-GFB1YDW450');
     </script>
 
     <!-- Favicon -->
@@ -45,7 +44,7 @@
             color: #333333;
         }
 
-                nav {
+        nav {
             background-color: rgba(255, 255, 255, 0.95);
             padding: 20px 40px;
             display: flex;
@@ -66,6 +65,12 @@
             transform: scale(1.1);
         }
 
+        .menu-toggle {
+            display: none;
+            font-size: 2em;
+            cursor: pointer;
+        }
+
         .menu {
             display: flex;
             gap: 30px;
@@ -81,11 +86,6 @@
 
         nav a:hover {
             color: #6B8E23;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
         }
 
         .dropdown-content {
@@ -115,7 +115,7 @@
         }
 
         @media (max-width: 768px) {
-            nav .menu {
+            .menu {
                 display: none;
                 flex-direction: column;
                 position: absolute;
@@ -128,12 +128,37 @@
                 text-align: center;
             }
 
-            nav .menu.active {
+            .menu.active {
                 display: flex;
             }
 
             .menu-toggle {
                 display: block;
+            }
+
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+                border-radius: 0;
+                background-color: transparent;
+                padding: 0;
+            }
+
+            .dropdown-content a {
+                padding: 8px 0;
+            }
+
+            .dropdown .dropdown-content {
+                display: none;
+                flex-direction: column;
+            }
+
+            .dropdown.active .dropdown-content {
+                display: flex;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: none;
             }
         }
 
@@ -198,7 +223,6 @@
             margin: 40px auto 0 auto;
         }
 
-        /* Garden Wizard Animation */
         .wizard-container {
             opacity: 0;
             transform: translateY(30px);
@@ -233,20 +257,20 @@
 
 <body>
 
-    <!-- Navigation with Submenu -->
-  <!-- Header -->
+<!-- Header -->
 <header>
     <nav>
         <div class="logo">
-            <a href="wizard.html">
+            <a href="#wizard-section">
                 <img src="GardenWizard.png" alt="Garden Wizard">
             </a>
         </div>
-        <div class="menu">
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="menu" id="menu">
             <a href="growingguide.html">Growing Guide</a>
-            <div class="dropdown">
-                <a href="gardening101.html">Gardening 101 ▾</a>
-                <div class="dropdown-content">
+            <div class="dropdown" id="dropdown">
+                <a href="#" onclick="toggleSubmenu(event)">Gardening 101 ▾</a>
+                <div class="dropdown-content" id="submenu">
                     <a href="gardening101.html#ourgardenstory">Our Garden Story</a>
                     <a href="gardening101.html#howwegrow">How We Grow</a>
                     <a href="gardening101.html#whynomiraclegro">Why No Miracle-Gro</a>
@@ -260,63 +284,62 @@
     </nav>
 </header>
 
-    <!-- Logo Section -->
-    <div class="logo-container">
-        <div class="logo-circle">
-            <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo">
-        </div>
+<!-- Logo Section -->
+<div class="logo-container">
+    <div class="logo-circle">
+        <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo">
     </div>
+</div>
 
-    <!-- Welcome Section -->
-    <section>
-        <h1>🌿 Welcome to DCW Grows 🌿</h1>
-        <p>We’re plant lovers on a mission to grow something beautiful—and share it with you!</p>
-        <p>We started our garden adventure in 2021 on Etsy, and it quickly took off. We currently sell outdoor plants and succulents, but we’re always expanding and growing—just like our garden. Stick around for tips, tricks, plant pics, and maybe a little garden magic.</p>
-        <p>Speaking of magic… meet our Garden Wizard below! 🧙‍♂️</p>
-        <p>Check out our Etsy shop, explore our Planting Tips, dive into our Gardening 101 page, and don’t be shy—ask the Garden Wizard anything. Let’s grow something awesome together!</p>
-    </section>
+<!-- Welcome Section -->
+<section>
+    <h1>🌿 Welcome to DCW Grows 🌿</h1>
+    <p>We’re plant lovers on a mission to grow something beautiful—and share it with you!</p>
+    <p>We started our garden adventure in 2021 on Etsy, and it quickly took off. We currently sell outdoor plants and succulents, but we’re always expanding and growing—just like our garden. Stick around for tips, tricks, plant pics, and maybe a little garden magic.</p>
+    <p>Speaking of magic… meet our Garden Wizard below! 🧙‍♂️</p>
+    <p>Check out our Etsy shop, explore our Planting Tips, dive into our Gardening 101 page, and don’t be shy—ask the Garden Wizard anything. Let’s grow something awesome together!</p>
+</section>
 
-    <!-- Garden Wizard Section -->
-    <section id="wizard-section">
-        <div class="wizard-container" id="wizard-container">
-            <img src="GardenWizard.png" alt="Garden Wizard">
-            <h2>🧙‍♂️ Meet Your Garden Wizard</h2>
-        </div>
-        <p>Every garden needs a little magic… and that’s where our Garden Wizard comes in.</p>
-        <p>Think of them as your plant-powered bestie—here to help you grow the garden of your dreams, answer all your questions, and maybe throw in a few gardening spells along the way. 🪄✨</p>
-        <p>Whether you’re wondering why your leaves are droopy, when to water, or if you can grow pumpkins in a kiddie pool (spoiler: yes, but we’ve got tips)—our Garden Wizard is ready to help!</p>
-        <p>No question is too small. No garden is too wild. Ask away. The Garden Wizard loves to talk dirt.</p>
+<!-- Garden Wizard Section -->
+<section id="wizard-section">
+    <div class="wizard-container" id="wizard-container">
+        <img src="GardenWizard.png" alt="Garden Wizard">
+        <h2>🧙‍♂️ Meet Your Garden Wizard</h2>
+    </div>
+    <p>Every garden needs a little magic… and that’s where our Garden Wizard comes in.</p>
+    <p>Think of them as your plant-powered bestie—here to help you grow the garden of your dreams, answer all your questions, and maybe throw in a few gardening spells along the way. 🪄✨</p>
+    <p>Whether you’re wondering why your leaves are droopy, when to water, or if you can grow pumpkins in a kiddie pool (spoiler: yes, but we’ve got tips)—our Garden Wizard is ready to help!</p>
+    <p>No question is too small. No garden is too wild. Ask away. The Garden Wizard loves to talk dirt.</p>
 
-        <!-- Chatbase iFrame -->
-        <iframe src="https://www.chatbase.co/chatbot-iframe/HVeDDdY99TWxWlJj6YXUA" width="100%" style="height: 100%; min-height: 700px" frameborder="0"></iframe>
-    </section>
+    <!-- Chatbase iFrame -->
+    <iframe src="https://www.chatbase.co/chatbot-iframe/HVeDDdY99TWxWlJj6YXUA" width="100%" style="height: 100%; min-height: 700px" frameborder="0"></iframe>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 DCW Grows | All rights reserved</p>
-    </footer>
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 DCW Grows | All rights reserved</p>
+</footer>
 
-    <!-- JavaScript -->
-    <script>
-        function toggleMenu() {
-            document.getElementById('menu').classList.toggle('active');
+<!-- JavaScript -->
+<script>
+    function toggleMenu() {
+        document.getElementById('menu').classList.toggle('active');
+    }
+
+    function toggleSubmenu(event) {
+        event.preventDefault();
+        document.getElementById('submenu').classList.toggle('active');
+    }
+
+    // Garden Wizard Animation
+    window.addEventListener('scroll', function () {
+        const wizard = document.getElementById('wizard-container');
+        const rect = wizard.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            wizard.classList.add('visible');
         }
-
-        function toggleSubmenu(event) {
-            event.preventDefault();
-            document.getElementById('submenu').classList.toggle('active');
-        }
-
-        // Garden Wizard Animation
-        window.addEventListener('scroll', function () {
-            const wizard = document.getElementById('wizard-container');
-            const rect = wizard.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 100) {
-                wizard.classList.add('visible');
-            }
-        });
-    </script>
+    });
+</script>
 
 </body>
-
 </html>
