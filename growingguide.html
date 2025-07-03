@@ -160,10 +160,12 @@
             margin: 10% auto;
             padding: 20px;
             border-radius: 10px;
-            width: 80%;
-            max-width: 800px;
+            width: 90%;
+            max-width: 900px;
             text-align: left;
             position: relative;
+            max-height: 80%;
+            overflow-y: auto;
         }
 
         .close {
@@ -188,76 +190,93 @@
         }
     </style>
 </head>
-
 <body>
 
-    <nav>
-        <div class="menu-left">
-            <a href="index.html#wizard-section" title="Jump to Garden Wizard">
-                <img src="GardenWizard.png" alt="Garden Wizard Icon">
-            </a>
-        </div>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <div class="menu" id="menu">
-            <a href="tips.html">Planting Tips</a>
-            <a href="growingguide.html">Growing Guide</a>
-            <a href="https://www.etsy.com/shop/DCWGrows" target="_blank">Etsy Shop</a>
-            <a href="https://www.instagram.com/dcwgrows" target="_blank">Instagram</a>
-            <a href="index.html">Home</a>
-        </div>
-    </nav>
-
-    <section>
-        <h1>🌿 Growing Guide 🌿</h1>
-        <p>Explore our plant growing guides and learn how to grow your own food!</p>
-    </section>
-
-    <section class="plant-grid">
-        <div class="plant-card" onclick="openModal('tomato')"><h2>🍅 Tomato</h2></div>
-        <div class="plant-card" onclick="openModal('jalapeno')"><h2>🌶️ Jalapeño</h2></div>
-    </section>
-
-    <div id="tomato" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('tomato')">&times;</span>
-            <h2>🍅 Tomato Growing Guide</h2>
-            <p><strong>What You Need:</strong><br>Full Sun, Well-draining soil, 5-gallon container, Support, Deep watering, Calcium-rich fertilizer</p>
-            <p><strong>Best Planting Times:</strong><br>South: Mar-Apr & Aug-Sep<br>West: Apr-May<br>Midwest: Late Apr-May<br>NE: May-Jun<br>PNW: May-Jun</p>
-            <p><strong>How to Grow:</strong><br>Plant Deep, Water Regularly, Feed Every 2-3 Weeks, Prune Suckers, Support Early</p>
-            <p><strong>When to Harvest:</strong><br>Fully colored, Slightly soft, Pick regularly</p>
-            <p><strong>Pro Tip:</strong> Start seeds indoors 6-8 weeks before the last frost date.</p>
-        </div>
+<nav>
+    <div class="menu-left">
+        <a href="index.html#wizard-section" title="Jump to Garden Wizard">
+            <img src="GardenWizard.png" alt="Garden Wizard Icon">
+        </a>
     </div>
-
-    <div id="jalapeno" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('jalapeno')">&times;</span>
-            <h2>🌶️ Jalapeño Growing Guide</h2>
-            <p><strong>What You Need:</strong><br>Full Sun, Good Soil, 3-5 gallon pot, Even Moisture, Optional Support, Balanced Fertilizer</p>
-            <p><strong>Best Planting Times:</strong><br>South: Mar-Apr & Aug-Sep<br>West: Apr-May<br>Midwest: Late Apr-May<br>NE: May-Jun<br>PNW: May-Jun</p>
-            <p><strong>How to Grow:</strong><br>Start Indoors (Optional), Plant Deep, Water Evenly, Feed Every 2-3 Weeks, Provide Support, Watch for Pests</p>
-            <p><strong>When to Harvest:</strong><br>Green: Firm, Shiny, 3-4 inches<br>Red: Sweeter & Spicier</p>
-            <p><strong>Pro Tip:</strong> Mulch to retain moisture and prevent weeds.</p>
-        </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="menu" id="menu">
+        <a href="tips.html">Planting Tips</a>
+        <a href="growingguide.html">Growing Guide</a>
+        <a href="https://www.etsy.com/shop/DCWGrows" target="_blank">Etsy Shop</a>
+        <a href="https://www.instagram.com/dcwgrows" target="_blank">Instagram</a>
+        <a href="index.html">Home</a>
     </div>
+</nav>
 
-    <footer>
-        <p>&copy; 2025 DCW Grows | All rights reserved</p>
-    </footer>
+<section>
+    <h1>🌿 Growing Guide 🌿</h1>
+    <p>Explore our plant growing guides and learn how to grow your own food!</p>
+</section>
 
-    <script>
-        function toggleMenu() {
-            document.getElementById('menu').classList.toggle('active');
-        }
+<section class="plant-grid">
+<div class="plant-card" onclick="openModal('tomato')"><h2>🍅 Tomato</h2></div>
+<div class="plant-card" onclick="openModal('jalapeno')"><h2>🌶️ Jalapeño</h2></div>
+<div class="plant-card" onclick="openModal('bellpepper')"><h2>🫑 Bell Pepper</h2></div>
+<div class="plant-card" onclick="openModal('onion')"><h2>🧅 Onion</h2></div>
+<div class="plant-card" onclick="openModal('carrot')"><h2>🥕 Carrot</h2></div>
+<div class="plant-card" onclick="openModal('sweetcorn')"><h2>🌽 Sweet Corn</h2></div>
+<div class="plant-card" onclick="openModal('herbs')"><h2>🌿 Herbs: Basil, Parsley, Chives, Cilantro</h2></div>
+<div class="plant-card" onclick="openModal('watermelon')"><h2>🍉 Watermelon</h2></div>
+<div class="plant-card" onclick="openModal('pumpkin')"><h2>🎃 Pumpkin</h2></div>
+<div class="plant-card" onclick="openModal('cucumber')"><h2>🥒 Cucumber</h2></div>
+<div class="plant-card" onclick="openModal('potato')"><h2>🥔 Potato</h2></div>
+<div class="plant-card" onclick="openModal('fennel')"><h2>🌿 Fennel</h2></div>
+<div class="plant-card" onclick="openModal('strawberry')"><h2>🍓 Strawberry</h2></div>
+<div class="plant-card" onclick="openModal('berries')"><h2>🍇 Blackberry & Raspberry</h2></div>
+<div class="plant-card" onclick="openModal('greenbeans')"><h2>🫘 Green Beans</h2></div>
+<div class="plant-card" onclick="openModal('garlic')"><h2>🧄 Garlic</h2></div>
+<div class="plant-card" onclick="openModal('pineapple')"><h2>🍍 Pineapple</h2></div>
+<div class="plant-card" onclick="openModal('dragonfruit')"><h2>🐉 Dragon Fruit</h2></div>
+<div class="plant-card" onclick="openModal('peas')"><h2>🟢 Peas</h2></div>
+</section>
+<!-- Tomato Modal -->
+<div id="tomato" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('tomato')">&times;</span>
+        <h2>🍅 Tomato Growing Guide</h2>
+        <p>✅ What You Need: Full Sun, Well-draining, compost-rich soil, 5-gallon container minimum, Tomato cage/stake/trellis, Deep, consistent watering, Calcium-rich fertilizer.</p>
+        <p>📅 Best Planting Times in the U.S.: Southern: March-April & August-September | Western: April-May | Midwest: Late April-May | Northeast: May-June | Pacific NW: May-June</p>
+        <p>🌿 How to Grow: Plant Deep (bury 2/3 of stem), Water Regularly (deep soak 1-2 times per week), Feed Every 2-3 Weeks, Prune Suckers (optional), Support Early (add cage/stake when planting).</p>
+        <p>🍅 When to Harvest: Fully colored and slightly soft tomatoes are ready. Pick regularly to encourage more fruit.</p>
+        <p>🌟 Pro Tip: Start seeds indoors 6-8 weeks before your last frost date.</p>
+    </div>
+</div>
 
-        function openModal(id) {
-            document.getElementById(id).style.display = 'block';
-        }
+<!-- Jalapeño Modal -->
+<div id="jalapeno" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('jalapeno')">&times;</span>
+        <h2>🌶️ Jalapeño Growing Guide</h2>
+        <p>✅ What You Need: Full Sun, Good Soil with compost, 3-5 gallon pot if container growing, Consistent water (even moisture), Optional stake for heavy fruit, Balanced fertilizer.</p>
+        <p>📅 Best Planting Times in the U.S.: Southern: March-April & August-September | Western: April-May | Midwest: Late April-May | Northeast: May-June | Pacific NW: May-June</p>
+        <p>🌿 How to Grow: Start indoors 8-10 weeks before frost (optional), Plant Deep (bury to first true leaves), Water evenly when top 1-2 inches are dry, Feed every 2-3 weeks, Optional support, Watch for pests.</p>
+        <p>🍴 When to Harvest: Green jalapeños are ready when firm and 3-4 inches long. Leave on plant to ripen to red for sweeter, hotter flavor.</p>
+        <p>🌟 Quick Tips: Mulch to retain moisture. Wait until soil is 60°F+ to plant. Regular picking encourages more fruit.</p>
+    </div>
+</div>
 
-        function closeModal(id) {
-            document.getElementById(id).style.display = 'none';
-        }
-    </script>
+<footer>
+    <p>&copy; 2025 DCW Grows | All rights reserved</p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        document.getElementById('menu').classList.toggle('active');
+    }
+
+    function openModal(id) {
+        document.getElementById(id).style.display = 'block';
+    }
+
+    function closeModal(id) {
+        document.getElementById(id).style.display = 'none';
+    }
+</script>
 
 </body>
 </html>
