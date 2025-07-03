@@ -197,15 +197,16 @@
 <header>
     <nav>
         <div class="logo">
-            <a href="wizard.html">
+            <a href="index.html#wizard-section">
                 <img src="GardenWizard.png" alt="Garden Wizard">
             </a>
         </div>
-        <div class="menu">
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="menu" id="menu">
             <a href="growingguide.html">Growing Guide</a>
-            <div class="dropdown">
-                <a href="gardening101.html">Gardening 101 ▾</a>
-                <div class="dropdown-content">
+            <div class="dropdown" id="dropdown">
+                <a href="#" onclick="toggleSubmenu(event)">Gardening 101 ▾</a>
+                <div class="dropdown-content" id="submenu">
                     <a href="gardening101.html#ourgardenstory">Our Garden Story</a>
                     <a href="gardening101.html#howwegrow">How We Grow</a>
                     <a href="gardening101.html#whynomiraclegro">Why No Miracle-Gro</a>
@@ -218,6 +219,18 @@
         </div>
     </nav>
 </header>
+
+<!-- Mobile Menu Script -->
+<script>
+    function toggleMenu() {
+        document.getElementById('menu').classList.toggle('active');
+    }
+
+    function toggleSubmenu(event) {
+        event.preventDefault();
+        document.getElementById('submenu').classList.toggle('active');
+    }
+</script>
 
 <!-- Section Header -->
 <div class="section-header">
