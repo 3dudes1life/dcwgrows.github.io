@@ -75,30 +75,25 @@
       .dropdown-content{position:static; display:none; box-shadow:none; padding:0; background:transparent; min-width:unset}
       .dropdown.active .dropdown-content{display:flex; flex-direction:column}
     }
-    /* --- Restore white content boxes (panels) --- */
-section,
-.section-header,
-.content-panel {
-  background: var(--panel);          /* rgba(255,255,255,.90) from :root */
-  padding: 40px 20px;
-  max-width: 1000px;
-  margin: 40px auto;
-  border-radius: 10px;
-  box-shadow: var(--shadow);         /* soft shadow from :root */
-  text-align: left;                  /* keep body copy left-aligned */
-}
 
-/* Optional: headings centered like before */
-.section-header h1,
-.section-header h2 { text-align: center; }
-
-/* If you used ULs in panels, keep spacing readable */
-section ul { 
-  list-style-position: inside; 
-  font-size: 1.1em; 
-  line-height: 1.7;
-  padding-left: 0;
-}
+    /* Panels: center content inside boxes */
+    section,
+    .section-header,
+    .content-panel{
+      background:var(--panel);
+      padding:40px 20px;
+      max-width:1000px;
+      margin:40px auto;
+      border-radius:10px;
+      box-shadow:var(--shadow);
+      text-align:center; /* center all text in panels */
+    }
+    section p, section li,
+    .section-header p, .section-header li,
+    .content-panel p, .content-panel li{ 
+      margin-left:auto; margin-right:auto;
+    }
+    section ul{list-style-position:inside; padding-left:0}
   </style>
 </head>
 
@@ -115,13 +110,12 @@ section ul {
         <div class="dropdown" id="dropdown">
           <a href="#" id="gardeningLink" aria-current="page">Gardening 101 ▾</a>
           <div class="dropdown-content" id="submenu">
-            <a href="gardening101.html#ourgardenstory">Our Garden Story</a>
-            <a href="gardening101.html#howwegrow">How We Grow</a>
-            <a href="gardening101.html#whynomiraclegro">Why No Miracle-Gro</a>
-            <a href="gardening101.html#ourgoal">Our Goal</a>
+            <a href="#ourgardenstory">Our Garden Story</a>
+            <a href="#howwegrow">How We Grow</a>
+            <a href="#whynomiraclegro">Why No Miracle-Gro</a>
+            <a href="#ourgoal">Our Goal</a>
           </div>
         </div>
-        <!-- Replaced Etsy with internal Shop page -->
         <a href="shop.html">Shop</a>
         <a href="https://www.instagram.com/dcwgrows" target="_blank" rel="noopener">Instagram</a>
         <a href="index.html">Home</a>
@@ -129,7 +123,7 @@ section ul {
     </nav>
   </header>
 
-  <!-- Header scripts (same behavior as shop.html) -->
+  <!-- Header scripts (same behavior as shop.html, with desktop navigation enabled) -->
   <script>
     // Mobile menu toggle
     const menuToggle = document.getElementById('menuToggle');
@@ -139,19 +133,19 @@ section ul {
       menuToggle.setAttribute('aria-expanded', String(open));
     });
 
-    // Mobile dropdown accordion
+    // Dropdown logic
     const dropdown = document.getElementById('dropdown');
     const gardeningLink = document.getElementById('gardeningLink');
+
+    // Mobile: tap to open/close submenu; Desktop: allow normal navigation on submenu links
     gardeningLink.addEventListener('click', (e) => {
       if (window.matchMedia('(max-width: 768px)').matches) {
         e.preventDefault();
         dropdown.classList.toggle('active');
-      } else {
-        e.preventDefault(); // prevents page jump on desktop
-      }
+      } // desktop: no preventDefault so submenu links navigate
     });
 
-    // Desktop: keep hover menu open with a tiny delay so it’s easy to enter
+    // Desktop hover stability (tiny delay)
     let ddTimer;
     dropdown.addEventListener('mouseenter', () => {
       clearTimeout(ddTimer);
