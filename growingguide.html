@@ -36,68 +36,89 @@
       margin:0; font-family:'Quicksand',sans-serif; color:var(--ink);
       background:url('tropical%20background.png') center/cover fixed no-repeat;
     }
+    html{scroll-behavior:smooth;}
 
-    /* NAV (matches shop.html) */
-    nav{
-      position:sticky; top:0; z-index:10;
+    /* ===== NAVIGATION ===== */
+    .dcw-nav{
+      position:sticky; top:0; z-index:1000;
       display:flex; align-items:center; justify-content:space-between;
       padding:14px 20px; background:var(--card);
       box-shadow:0 2px 10px rgba(0,0,0,.06); backdrop-filter:saturate(1.1) blur(6px);
     }
-    .logo img{width:56px; height:auto; transition:transform .2s}
-    .logo:hover img{transform:scale(1.06)}
-    .menu{display:flex; gap:22px; align-items:center}
-    nav a{font-weight:700; text-decoration:none; color:var(--ink-strong)}
-    nav a:hover{color:var(--accent)}
-    .menu a[aria-current="page"]{color:var(--accent)}
-    .menu-toggle{display:none; font-size:1.9rem; cursor:pointer; user-select:none}
+    .dcw-logo img{width:56px; height:auto; transition:transform .2s}
+    .dcw-logo:hover img{transform:scale(1.06)}
+    .dcw-menu{display:flex; gap:22px; align-items:center}
+    .dcw-nav a{text-decoration:none; font-weight:700; color:var(--ink-strong)}
+    .dcw-nav a:hover{color:var(--accent)}
+    .dcw-menu a[aria-current="page"]{color:var(--accent)}
+    .dcw-menu-toggle{display:none; font-size:1.9rem; cursor:pointer; user-select:none}
 
     /* Dropdown (desktop) */
-    .dropdown{position:relative}
-    .dropdown > a{font-weight:700}
-    .dropdown-content{
+    .dcw-dropdown{position:relative}
+    .dcw-dropdown-content{
       display:none; position:absolute; left:0; top:calc(100% + 10px);
-      background:var(--card); min-width:220px; border-radius:10px; box-shadow:var(--shadow); padding:8px; z-index:30;
+      background:var(--card); min-width:220px; border-radius:12px;
+      box-shadow:var(--shadow); padding:8px; z-index:1100;
     }
-    .dropdown-content a{display:block; padding:10px 12px; font-weight:600; white-space:nowrap}
-    .dropdown:hover .dropdown-content,
-    .dropdown:focus-within .dropdown-content,
-    .dropdown.open .dropdown-content{display:block}
+    .dcw-dropdown-content a{display:block; padding:10px 12px; font-weight:600; white-space:nowrap}
+    .dcw-dropdown:hover .dcw-dropdown-content,
+    .dcw-dropdown:focus-within .dcw-dropdown-content,
+    .dcw-dropdown.open .dcw-dropdown-content{display:block}
 
     /* Mobile */
-    @media (max-width: 768px){
-      .menu{display:none; flex-direction:column; position:absolute; top:70px; right:16px;
-            background:var(--card); padding:14px 18px; border-radius:12px; width:min(88vw, 320px); box-shadow:var(--shadow)}
-      .menu.active{display:flex}
-      .menu-toggle{display:block}
-      /* Mobile: dropdown becomes accordion */
-      .dropdown:hover .dropdown-content{display:none}
-      .dropdown-content{position:static; display:none; box-shadow:none; padding:0; background:transparent; min-width:unset}
-      .dropdown.active .dropdown-content{display:flex; flex-direction:column}
+    @media (max-width:768px){
+      .dcw-menu{
+        display:none; flex-direction:column; position:absolute; top:70px; right:16px;
+        background:var(--card); padding:14px 18px; border-radius:12px;
+        width:min(88vw,320px); box-shadow:var(--shadow);
+      }
+      .dcw-menu.active{display:flex}
+      .dcw-menu-toggle{display:block}
+
+      /* Dropdown becomes accordion on mobile */
+      .dcw-dropdown:hover .dcw-dropdown-content{display:none}
+      .dcw-dropdown-content{position:static; display:none; box-shadow:none; padding:0; background:transparent; min-width:unset}
+      .dcw-dropdown.active .dcw-dropdown-content{display:flex; flex-direction:column}
     }
+
+    /* ===== CONTENT BOXES ===== */
+    section{
+      background:var(--panel);
+      padding:40px 20px;
+      max-width:1000px;
+      margin:40px auto;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    h1,h2{text-align:center; margin-top:0}
+    p{font-size:1.2em; line-height:1.7; max-width:800px; margin:0 auto 20px auto; text-align:center}
+    ul{list-style-position:inside; max-width:800px; margin:0 auto 20px auto; font-size:1.1em; line-height:1.6; text-align:left}
+    footer{max-width:1000px; margin:40px auto; text-align:center}
+    footer p{background:var(--card); padding:18px; border-radius:var(--radius); box-shadow:var(--shadow)}
   </style>
 </head>
 
 <body>
   <!-- Header -->
   <header>
-    <nav>
-      <a class="logo" href="index.html#wizard-section" aria-label="DCW Grows Home">
+    <nav class="dcw-nav">
+      <a class="dcw-logo" href="index.html#wizard-section" aria-label="DCW Grows Home">
         <img src="GardenWizard.png" alt="Garden Wizard">
       </a>
-      <div class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">☰</div>
-      <div class="menu" id="menu">
+
+      <div class="dcw-menu-toggle" id="dcwMenuToggle" aria-label="Toggle menu" aria-expanded="false">☰</div>
+
+      <div class="dcw-menu" id="dcwMenu">
         <a href="growingguide.html">Growing Guide</a>
-        <div class="dropdown" id="dropdown">
-          <a href="#" id="gardeningLink" aria-current="page">Gardening 101 ▾</a>
-          <div class="dropdown-content" id="submenu">
+        <div class="dcw-dropdown" id="dcwDropdown">
+          <a href="#" id="dcwGardeningLink" aria-current="page">Gardening 101 ▾</a>
+          <div class="dcw-dropdown-content" id="dcwSubmenu">
             <a href="gardening101.html#ourgardenstory">Our Garden Story</a>
             <a href="gardening101.html#howwegrow">How We Grow</a>
             <a href="gardening101.html#whynomiraclegro">Why No Miracle-Gro</a>
             <a href="gardening101.html#ourgoal">Our Goal</a>
           </div>
         </div>
-        <!-- Replaced Etsy with internal Shop page -->
         <a href="shop.html">Shop</a>
         <a href="https://www.instagram.com/dcwgrows" target="_blank" rel="noopener">Instagram</a>
         <a href="index.html">Home</a>
@@ -105,38 +126,66 @@
     </nav>
   </header>
 
-  <!-- Header scripts (same behavior as shop.html) -->
+  <!-- Example Sections -->
+  <section id="ourgardenstory">
+    <h2>🌱 Our Garden Story</h2>
+    <p>We grow because it’s in our blood. …</p>
+  </section>
+
+  <section id="howwegrow">
+    <h2>🌿 How We Grow</h2>
+    <p>Living in Southern California, we’ve had to get creative with our garden. …</p>
+  </section>
+
+  <section id="whynomiraclegro">
+    <h2>🚫 Why No Miracle-Gro</h2>
+    <p>We don’t use synthetic fertilizers …</p>
+  </section>
+
+  <section id="ourgoal">
+    <h2>🎯 Our Goal</h2>
+    <p>Our goal is to inspire others to grow …</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 DCW Grows | All rights reserved</p>
+  </footer>
+
+  <!-- Header scripts -->
   <script>
     // Mobile menu toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const menu = document.getElementById('menu');
-    menuToggle.addEventListener('click', () => {
-      const open = menu.classList.toggle('active');
-      menuToggle.setAttribute('aria-expanded', String(open));
+    const dcwMenuToggle = document.getElementById('dcwMenuToggle');
+    const dcwMenu = document.getElementById('dcwMenu');
+    dcwMenuToggle.addEventListener('click', () => {
+      const open = dcwMenu.classList.toggle('active');
+      dcwMenuToggle.setAttribute('aria-expanded', String(open));
     });
 
-    // Mobile dropdown accordion
-    const dropdown = document.getElementById('dropdown');
-    const gardeningLink = document.getElementById('gardeningLink');
-    gardeningLink.addEventListener('click', (e) => {
-      if (window.matchMedia('(max-width: 768px)').matches) {
+    // Dropdown: mobile accordion; desktop hover with delay
+    const dcwDropdown = document.getElementById('dcwDropdown');
+    const dcwGardeningLink = document.getElementById('dcwGardeningLink');
+
+    dcwGardeningLink.addEventListener('click', (e) => {
+      if (window.matchMedia('(max-width:768px)').matches) {
         e.preventDefault();
-        dropdown.classList.toggle('active');
-      } else {
-        e.preventDefault(); // prevents page jump on desktop
+        dcwDropdown.classList.toggle('active');
       }
     });
 
-    // Desktop: keep hover menu open with a tiny delay so it’s easy to enter
+    // Desktop hover stability
     let ddTimer;
-    dropdown.addEventListener('mouseenter', () => {
+    dcwDropdown.addEventListener('mouseenter', () => {
       clearTimeout(ddTimer);
-      dropdown.classList.add('open');
+      dcwDropdown.classList.add('open');
     });
-    dropdown.addEventListener('mouseleave', () => {
-      ddTimer = setTimeout(() => dropdown.classList.remove('open'), 150);
+    dcwDropdown.addEventListener('mouseleave', () => {
+      ddTimer = setTimeout(() => dcwDropdown.classList.remove('open'), 150);
     });
   </script>
+</body>
+</html>
+
 
   <!-- 🪴 Your Gardening 101 content starts here... -->
 
