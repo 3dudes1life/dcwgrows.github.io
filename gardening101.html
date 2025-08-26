@@ -75,6 +75,30 @@
       .dropdown-content{position:static; display:none; box-shadow:none; padding:0; background:transparent; min-width:unset}
       .dropdown.active .dropdown-content{display:flex; flex-direction:column}
     }
+    /* --- Restore white content boxes (panels) --- */
+section,
+.section-header,
+.content-panel {
+  background: var(--panel);          /* rgba(255,255,255,.90) from :root */
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 40px auto;
+  border-radius: 10px;
+  box-shadow: var(--shadow);         /* soft shadow from :root */
+  text-align: left;                  /* keep body copy left-aligned */
+}
+
+/* Optional: headings centered like before */
+.section-header h1,
+.section-header h2 { text-align: center; }
+
+/* If you used ULs in panels, keep spacing readable */
+section ul { 
+  list-style-position: inside; 
+  font-size: 1.1em; 
+  line-height: 1.7;
+  padding-left: 0;
+}
   </style>
 </head>
 
