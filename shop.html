@@ -58,6 +58,11 @@
     .logo img{width:56px; height:auto; object-fit:contain; transition:transform .2s ease}
     .logo:hover img{transform:scale(1.06)}
     .menu{display:flex; gap:22px; align-items:center}
+    /* Desktop dropdown */
+    .dropdown{position:relative}
+    .dropdown-content{display:none; position:absolute; left:0; top:calc(100% + 10px); background:var(--card); min-width:220px; box-shadow:var(--shadow); border-radius:10px; padding:8px; z-index:30}
+    .dropdown-content a{display:block; padding:10px 12px; font-weight:600; white-space:nowrap}
+    .dropdown:hover .dropdown-content{display:block}
     .menu a{font-weight:700; text-decoration:none; color:var(--ink-strong)}
     .menu a:hover{color:var(--accent)}
     .menu a[aria-current="page"]{color:var(--accent)}
@@ -65,6 +70,13 @@
 
     @media (max-width: 768px){
       .menu{display:none; flex-direction:column; position:absolute; top:70px; right:16px; background:var(--card); padding:14px 18px; border-radius:12px; width:min(88vw, 320px); box-shadow:var(--shadow)}
+      .menu.active{display:flex}
+      .menu-toggle{display:block}
+      /* On mobile, dropdown becomes accordion */
+      .dropdown:hover .dropdown-content{display:none}
+      .dropdown-content{position:static; display:none; box-shadow:none; padding:0; background:transparent; min-width:unset}
+      .dropdown.active .dropdown-content{display:flex; flex-direction:column}
+    }
       .menu.active{display:flex}
       .menu-toggle{display:block}
       .dropdown:hover .dropdown-content{display:none}
@@ -86,6 +98,7 @@
     @media (max-width: 600px){
       .store{padding:10px}
     }
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   </style>
 </head>
 <body>
@@ -115,15 +128,16 @@
   </header>
 
   <main class="wrap">
-    <section class="hero">
+    <section class=\"hero\">
       <h1>🛒 DCW Grows Shop</h1>
       <p>Succulents, cactus, plumerias & more — ready to ship.</p>
+      <p style=\"font-size:.95rem; opacity:.8; margin-top:6px\">This store is powered by Shopify and checkout is securely processed through Shopify.</p>
     </section>
 
     <section class="store">
       <!-- Shopify Buy Button mount point -->
       <div id='collection-component-1756235343431'>
-        <p class="hint">Loading products… 🌱</p>
+        <div class="sr-only" aria-live="polite">Loading products…</div>
       </div>
     </section>
   </main>
@@ -159,6 +173,9 @@
         storefrontAccessToken: '5ab76d1c31a639dbc32ea62cd825538d',
       });
       ShopifyBuy.UI.onReady(client).then(function (ui) {
+        // Remove any loading text once UI is ready
+        var sr = document.querySelector('#collection-component-1756235343431 .sr-only');
+        if (sr) sr.remove();
         ui.createComponent('collection', {
           id: '517857575131',
           node: document.getElementById('collection-component-1756235343431'),
@@ -230,4 +247,3 @@
   </script>
 </body>
 </html>
- 
