@@ -1,310 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DCW Grows 🌱</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DCW Grows 🌱</title>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GFB1YDW450"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-GFB1YDW450');
-    </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GFB1YDW450"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-GFB1YDW450');
+  </script>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="apple-touch-icon" href="favicon.png">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="DCW Grows 🌱" />
-    <meta property="og:description" content="We’re plant lovers on a mission to grow something beautiful—and share it with you!" />
-    <meta property="og:image" content="Socialmobileshare.png" />
-    <meta property="og:url" content="https://www.dcwgrows.com" />
-    <meta property="og:type" content="website" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="DCW Grows 🌱" />
+  <meta property="og:description" content="We’re plant lovers on a mission to grow something beautiful—and share it with you!" />
+  <meta property="og:image" content="Socialmobileshare.png" />
+  <meta property="og:url" content="https://www.dcwgrows.com" />
+  <meta property="og:type" content="website" />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="DCW Grows 🌱" />
-    <meta name="twitter:description" content="We’re plant lovers on a mission to grow something beautiful—and share it with you!" />
-    <meta name="twitter:image" content="Socialmobileshare.png" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DCW Grows 🌱" />
+  <meta name="twitter:description" content="We’re plant lovers on a mission to grow something beautiful—and share it with you!" />
+  <meta name="twitter:image" content="Socialmobileshare.png" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
-    <style>
-        body {
-            font-family: 'Quicksand', sans-serif;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            background: url('tropical%20background.png') no-repeat center center fixed;
-            background-size: cover;
-            color: #333333;
-        }
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
 
-        nav {
-            background-color: rgba(255, 255, 255, 0.95);
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
+  <style>
+    :root{
+      --ink:#333333;
+      --ink-strong:#111;
+      --accent:#6B8E23; /* olive */
+      --card:rgba(255,255,255,.95);
+      --panel:rgba(255,255,255,.90);
+      --radius:12px;
+      --shadow:0 10px 28px rgba(0,0,0,.10);
+    }
 
-        .logo img {
-            width: 60px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      font-family:'Quicksand',sans-serif; margin:0; padding:0; min-height:100vh;
+      background:url('tropical%20background.png') no-repeat center center fixed;
+      background-size:cover; color:var(--ink);
+    }
 
-        .logo img:hover {
-            transform: scale(1.1);
-        }
+    /* NAV */
+    nav{
+      background-color:var(--card);
+      padding:14px 20px; /* tightened header */
+      display:flex; justify-content:space-between; align-items:center;
+      position:sticky; top:0; z-index:10; box-shadow:0 2px 10px rgba(0,0,0,.06);
+      backdrop-filter:saturate(1.1) blur(6px);
+    }
+    .logo img{width:56px; height:auto; cursor:pointer; transition:transform .2s ease}
+    .logo img:hover{transform:scale(1.06)}
 
-        .menu-toggle {
-            display: none;
-            font-size: 2em;
-            cursor: pointer;
-        }
+    .menu{display:flex; gap:22px; align-items:center}
+    nav a{color:var(--ink-strong); text-decoration:none; font-size:1.05rem; font-weight:700; transition:color .2s ease}
+    nav a:hover{color:var(--accent)}
 
-        .menu {
-            display: flex;
-            gap: 30px;
-        }
+    .menu-toggle{display:none; font-size:1.9rem; cursor:pointer; user-select:none}
 
-        nav a {
-            color: #333333;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
+    /* Dropdown */
+    .dropdown{position:relative}
+    .dropdown-content{
+      display:none; position:absolute; right:0; top:calc(100% + 10px);
+      background:var(--card); min-width:220px; box-shadow:var(--shadow); border-radius:10px; padding:8px; z-index:20;
+    }
+    .dropdown-content a{display:block; padding:10px 12px; font-weight:600}
+    .dropdown:hover .dropdown-content{display:block}
 
-        nav a:hover {
-            color: #6B8E23;
-        }
+    @media (max-width: 768px){
+      .menu{display:none; flex-direction:column; position:absolute; top:70px; right:16px; background:var(--card); padding:14px 18px; border-radius:12px; text-align:left; width:min(88vw, 320px); box-shadow:var(--shadow)}
+      .menu.active{display:flex}
+      .menu-toggle{display:block}
+      .dropdown:hover .dropdown-content{display:none}
+      .dropdown-content{position:static; display:none; box-shadow:none; padding:0; background:transparent}
+      .dropdown.active .dropdown-content{display:flex; flex-direction:column}
+    }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: rgba(255, 255, 255, 0.95);
-            min-width: 200px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            z-index: 1;
-        }
+    /* Sections */
+    section{
+      background-color:var(--panel); padding:54px 18px; max-width:1000px; margin:32px auto; border-radius:var(--radius); text-align:center; box-shadow:var(--shadow);
+    }
+    h1,h2{text-align:center; margin:0 0 10px}
+    p{font-size:1.18rem; line-height:1.75; max-width:820px; margin:0 auto 18px}
 
-        .dropdown-content a {
-            display: block;
-            padding: 12px 16px;
-            text-decoration: none;
-            color: #333333;
-            font-weight: normal;
-        }
+    .logo-container{display:flex; justify-content:center; align-items:center; margin-top:28px}
+    .logo-circle{background:var(--card); border-radius:50%; padding:34px; display:flex; justify-content:center; align-items:center; animation:shimmer 4s infinite linear; box-shadow:var(--shadow)}
+    .logo-circle img{width:100%; max-width:700px; height:auto; object-fit:contain; filter:drop-shadow(0 4px 10px rgba(0,0,0,.15))}
 
-        .dropdown-content a:hover {
-            background-color: #f0f0f0;
-        }
+    @keyframes shimmer{0%{opacity:1} 50%{opacity:.88} 100%{opacity:1}}
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+    footer{background:var(--panel); text-align:center; padding:24px 18px; border-radius:10px; max-width:1000px; margin:40px auto 20px; box-shadow:var(--shadow)}
 
-        @media (max-width: 768px) {
-            .menu {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 70px;
-                right: 20px;
-                width: auto;
-                background-color: rgba(255, 255, 255, 0.95);
-                padding: 20px 30px;
-                border-radius: 10px;
-                text-align: center;
-            }
+    /* Wizard fade-in */
+    .wizard-container{opacity:0; transform:translateY(24px); transition:opacity .9s ease, transform .9s ease}
+    .wizard-container.visible{opacity:1; transform:translateY(0)}
 
-            .menu.active {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .dropdown-content {
-                position: static;
-                box-shadow: none;
-                border-radius: 0;
-                background-color: transparent;
-                padding: 0;
-            }
-
-            .dropdown-content a {
-                padding: 8px 0;
-            }
-
-            .dropdown .dropdown-content {
-                display: none;
-                flex-direction: column;
-            }
-
-            .dropdown.active .dropdown-content {
-                display: flex;
-            }
-
-            .dropdown:hover .dropdown-content {
-                display: none;
-            }
-        }
-
-        section {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 60px 20px;
-            max-width: 1000px;
-            margin: 40px auto;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        h1, h2 {
-            text-align: center;
-        }
-
-        p {
-            font-size: 1.4em;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto 30px auto;
-        }
-
-        .logo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 40px;
-        }
-
-        .logo-circle {
-            background-color: rgba(255, 255, 255, 0.95);
-            border-radius: 50%;
-            padding: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            animation: shimmer 4s infinite linear;
-        }
-
-        .logo-circle img {
-            width: 100%;
-            max-width: 700px;
-            height: 100%;
-            object-fit: contain;
-            object-position: center;
-            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
-        }
-
-        @keyframes shimmer {
-            0% { opacity: 1; }
-            50% { opacity: 0.8; }
-            100% { opacity: 1; }
-        }
-
-        footer {
-            background-color: rgba(255, 255, 255, 0.9);
-            text-align: center;
-            padding: 30px 20px;
-            border-radius: 10px;
-            max-width: 1000px;
-            margin: 40px auto 0 auto;
-        }
-
-        .wizard-container {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
-
-        .wizard-container.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .wizard-container img {
-            width: 150px;
-            margin-bottom: 20px;
-        }
-
-        @media (max-width: 768px) {
-            section {
-                padding: 30px 15px;
-            }
-
-            p {
-                font-size: 1.1em;
-            }
-
-            .wizard-container img {
-                width: 120px;
-            }
-        }
-    </style>
+    @media (max-width:768px){
+      section{padding:32px 14px}
+      p{font-size:1.05rem}
+      .logo-circle{padding:24px}
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- Header -->
-<header>
+  <!-- Header -->
+  <header>
     <nav>
-        <div class="logo">
-            <a href="#wizard-section">
-                <img src="GardenWizard.png" alt="Garden Wizard">
-            </a>
+      <a class="logo" href="index.html" aria-label="DCW Grows Home">
+        <img src="GardenWizard.png" alt="Garden Wizard" />
+      </a>
+      <div class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">☰</div>
+      <div class="menu" id="menu">
+        <a href="growingguide.html">Growing Guide</a>
+        <div class="dropdown" id="dropdown">
+          <a href="#" id="gardeningLink">Gardening 101 ▾</a>
+          <div class="dropdown-content" id="submenu">
+            <a href="gardening101.html#ourgardenstory">Our Garden Story</a>
+            <a href="gardening101.html#howwegrow">How We Grow</a>
+            <a href="gardening101.html#whynomiraclegro">Why No Miracle-Gro</a>
+            <a href="gardening101.html#ourgoal">Our Goal</a>
+          </div>
         </div>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <div class="menu" id="menu">
-            <a href="growingguide.html">Growing Guide</a>
-            <div class="dropdown" id="dropdown">
-                 <a href="#" onclick="toggleSubmenu(event)">Gardening 101 ▾</a>
-                <div class="dropdown-content" id="submenu">
-                    <a href="gardening101.html#ourgardenstory">Our Garden Story</a>
-                    <a href="gardening101.html#howwegrow">How We Grow</a>
-                    <a href="gardening101.html#whynomiraclegro">Why No Miracle-Gro</a>
-                    <a href="gardening101.html#ourgoal">Our Goal</a>
-                </div>
-            </div>
-            <a href="https://outatinc.myshopify.com/collections/dcw-grows" target="_blank">Shopify Shop</a>
-            <a href="https://www.instagram.com/dcwgrows" target="_blank">Instagram</a>
-            <a href="index.html">Home</a>
-        </div>
+        <!-- NEW: internal shop page -->
+        <a href="shop.html" aria-label="Shop">Shop</a>
+        <a href="https://www.instagram.com/dcwgrows" target="_blank" rel="noopener">Instagram</a>
+        <a href="index.html">Home</a>
+      </div>
     </nav>
-</header>
+  </header>
 
-<!-- Logo Section -->
-<div class="logo-container">
+  <!-- Logo Section -->
+  <div class="logo-container">
     <div class="logo-circle">
-        <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo">
+      <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo" />
     </div>
-</div>
+  </div>
 
-<!-- Welcome Section -->
-<section>
+  <!-- Welcome Section -->
+  <section>
     <h1>🌿 Welcome to DCW Grows 🌿</h1>
     <p>We’re plant lovers on a mission to grow something beautiful—and share it with you!</p>
     <p>We started our garden adventure in 2021 on Etsy, it quickly took off, and has now expanded to Shopify. We currently sell outdoor plants and succulents, but we’re always expanding and growing—just like our garden. Stick around for tips, tricks, plant pics, and maybe a little garden magic.</p>
     <p>Speaking of magic… meet our Garden Wizard below! 🧙‍♂️</p>
-    <p>Check out our Shopify shop, explore our Planting Tips, dive into our Gardening 101 page, and don’t be shy—ask the Garden Wizard anything. Let’s grow something awesome together!</p>
-</section>
+    <p>Check out our <strong>Shop</strong>, explore our Planting Tips, dive into our Gardening 101 page, and don’t be shy—ask the Garden Wizard anything. Let’s grow something awesome together!</p>
+  </section>
 
-<!-- Garden Wizard Section -->
-<section id="wizard-section">
+  <!-- Garden Wizard Section -->
+  <section id="wizard-section">
     <div class="wizard-container" id="wizard-container">
-        <img src="GardenWizard.png" alt="Garden Wizard">
-        <h2>🧙‍♂️ Meet Your Garden Wizard</h2>
+      <img src="GardenWizard.png" alt="Garden Wizard" style="width:150px; margin-bottom:20px" />
+      <h2>🧙‍♂️ Meet Your Garden Wizard</h2>
     </div>
     <p>Every garden needs a little magic… and that’s where our Garden Wizard comes in.</p>
     <p>Think of them as your plant-powered bestie—here to help you grow the garden of your dreams, answer all your questions, and maybe throw in a few gardening spells along the way. 🪄✨</p>
@@ -312,34 +169,42 @@
     <p>No question is too small. No garden is too wild. Ask away. The Garden Wizard loves to talk dirt.</p>
 
     <!-- Chatbase iFrame -->
-    <iframe src="https://www.chatbase.co/chatbot-iframe/HVeDDdY99TWxWlJj6YXUA" width="100%" style="height: 100%; min-height: 700px" frameborder="0"></iframe>
-</section>
+    <iframe src="https://www.chatbase.co/chatbot-iframe/HVeDDdY99TWxWlJj6YXUA" width="100%" style="height:100%; min-height:700px" frameborder="0"></iframe>
+  </section>
 
-<!-- Footer -->
-<footer>
-    <p>&copy; 2025 DCW Grows | All rights reserved</p>
-</footer>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 DCW Grows | All rights reserved</p>
+  </footer>
 
-<!-- JavaScript -->
-<script>
-    function toggleMenu() {
-        document.getElementById('menu').classList.toggle('active');
-    }
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('menu');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
 
-    function toggleSubmenu(event) {
-        event.preventDefault();
-        document.getElementById('submenu').classList.toggle('active');
-    }
+    // Mobile dropdown toggle
+    const dropdown = document.getElementById('dropdown');
+    const gardeningLink = document.getElementById('gardeningLink');
+    const submenu = document.getElementById('submenu');
+
+    gardeningLink.addEventListener('click', (e) => {
+      // Only intercept on mobile where dropdown acts as accordion
+      if (window.matchMedia('(max-width: 768px)').matches) {
+        e.preventDefault();
+        dropdown.classList.toggle('active');
+      }
+    });
 
     // Garden Wizard Animation
-    window.addEventListener('scroll', function () {
-        const wizard = document.getElementById('wizard-container');
-        const rect = wizard.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-            wizard.classList.add('visible');
-        }
+    window.addEventListener('scroll', function(){
+      const wizard = document.getElementById('wizard-container');
+      const rect = wizard.getBoundingClientRect();
+      if(rect.top < window.innerHeight - 100){ wizard.classList.add('visible'); }
     });
-</script>
-
+  </script>
 </body>
 </html>
