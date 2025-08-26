@@ -82,9 +82,31 @@
     footer{text-align:center;margin:40px auto 20px;max-width:1000px}
     footer p{background:rgba(255,255,255,.9);padding:18px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
 
-    /* 🔧 FIX: let JS show modals again */
-    .modal{display:none;}        /* removed !important */
-    .modal.show{display:block;}  /* when opened via JS */
+    /* ✅ Fixed modal overlay (cute centered box) */
+    .modal{
+      display:none;                 /* hidden until JS shows */
+      position:fixed; inset:0;
+      z-index:2000;
+      background:rgba(0,0,0,.55);   /* dim backdrop */
+      overflow:auto; padding:32px 16px;
+    }
+    .modal.show{ display:block; }
+    .modal-content{
+      position:relative;
+      width:min(900px, 92vw);
+      margin:40px auto;
+      background:#fff;
+      border-radius:12px;
+      box-shadow:0 20px 40px rgba(0,0,0,.18);
+      padding:22px;
+      text-align:left;
+    }
+    .close{
+      position:absolute; top:10px; right:14px;
+      font-size:26px; line-height:1; cursor:pointer; color:#888;
+    }
+    .close:hover{ color:#111; }
+    body.modal-open{ overflow:hidden; } /* lock background scroll when open */
   </style>
 </head>
 
@@ -141,19 +163,39 @@
     ddTimer = setTimeout(() => dcwDropdown.classList.remove('open'), 150);
   });
 
-  /* 🔧 FIX: modal open/close helpers so tiles work again */
+  /* ✅ Modal helpers: cute centered overlay */
   function openModal(id){
+    // If you want only one open at a time, uncomment the next line:
+    // document.querySelectorAll('.modal.show').forEach(m=>m.classList.remove('show'));
+
     const el = document.getElementById(id);
-    if(el){ el.classList.add('show'); }
+    if(!el) return;
+    el.classList.add('show');
+    document.body.classList.add('modal-open');
   }
   function closeModal(id){
     const el = document.getElementById(id);
-    if(el){ el.classList.remove('show'); }
+    if(!el) return;
+    el.classList.remove('show');
+    if(!document.querySelector('.modal.show')){
+      document.body.classList.remove('modal-open');
+    }
   }
-  // Optional: click outside to close
+  // Click backdrop closes
   window.addEventListener('click', (e) => {
-    const m = e.target.closest('.modal');
-    if(m && e.target === m){ m.classList.remove('show'); }
+    if(e.target.classList && e.target.classList.contains('modal')){
+      e.target.classList.remove('show');
+      if(!document.querySelector('.modal.show')){
+        document.body.classList.remove('modal-open');
+      }
+    }
+  });
+  // Esc closes
+  window.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape'){
+      document.querySelectorAll('.modal.show').forEach(m=>m.classList.remove('show'));
+      document.body.classList.remove('modal-open');
+    }
   });
 </script>
 
