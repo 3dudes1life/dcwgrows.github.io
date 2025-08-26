@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop | DCW Grows 🌱</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GFB1YDW450"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-GFB1YDW450');
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+
+  <!-- Open Graph / Twitter (optional but helpful) -->
+  <meta property="og:title" content="Shop | DCW Grows" />
+  <meta property="og:description" content="Succulents, cactus, plumerias & more — shipped with love from Escondido, CA." />
+  <meta property="og:image" content="Socialmobileshare.png" />
+  <meta property="og:url" content="https://www.dcwgrows.com/shop.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --ink:#333;
+      --ink-strong:#111;
+      --accent:#6B8E23; /* olive */
+      --card:rgba(255,255,255,.95);
+      --panel:rgba(255,255,255,.90);
+      --radius:12px;
+      --shadow:0 10px 28px rgba(0,0,0,.10);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:'Quicksand',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--ink);
+      background:url('tropical%20background.png') center/cover fixed no-repeat;
+    }
+
+    /* NAV (matches index) */
+    nav{
+      position:sticky; top:0; z-index:10;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:14px 20px;
+      background:var(--card); backdrop-filter:saturate(1.1) blur(6px);
+      box-shadow:0 2px 10px rgba(0,0,0,.06);
+    }
+    .logo{display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit}
+    .logo img{width:56px; height:auto; object-fit:contain; transition:transform .2s ease}
+    .logo:hover img{transform:scale(1.06)}
+    .menu{display:flex; gap:22px; align-items:center}
+    .menu a{font-weight:700; text-decoration:none; color:var(--ink-strong)}
+    .menu a:hover{color:var(--accent)}
+    .menu a[aria-current="page"]{color:var(--accent)}
+    .menu-toggle{display:none; font-size:1.9rem; cursor:pointer; user-select:none}
+
+    @media (max-width: 768px){
+      .menu{display:none; flex-direction:column; position:absolute; top:70px; right:16px; background:var(--card); padding:14px 18px; border-radius:12px; width:min(88vw, 320px); box-shadow:var(--shadow)}
+      .menu.active{display:flex}
+      .menu-toggle{display:block}
+      .dropdown:hover .dropdown-content{display:none}
+      .dropdown-content{position:static; display:none; box-shadow:none; padding:0; background:transparent}
+      .dropdown.active .dropdown-content{display:flex; flex-direction:column}
+    }
+
+    /* CONTENT WRAP */
+    .wrap{max-width:1200px; margin:28px auto 40px; padding:0 16px}
+    .hero{background:var(--panel); border-radius:var(--radius); box-shadow:var(--shadow); padding:28px; text-align:center}
+    .hero h1{margin:0 0 6px}
+    .hero p{margin:0; opacity:.9}
+
+    /* SHOPIFY AREA */
+    .store{background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px; margin-top:20px}
+    .hint{font-size:.95rem; opacity:.75; margin:8px 0 0}
+
+    /* Small tweak for Shopify Buy Button cards on tiny screens */
+    @media (max-width: 600px){
+      .store{padding:10px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <a class="logo" href="index.html" aria-label="DCW Grows Home">
+        <img src="GardenWizard.png" alt="Garden Wizard" />
+      </a>
+      <div class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">☰</div>
+      <div class="menu" id="menu">
+        <a href="growingguide.html">Growing Guide</a>
+        <div class="dropdown" id="dropdown">
+          <a href="#" id="gardeningLink">Gardening 101 ▾</a>
+          <div class="dropdown-content" id="submenu">
+            <a href="gardening101.html#ourgardenstory">Our Garden Story</a>
+            <a href="gardening101.html#howwegrow">How We Grow</a>
+            <a href="gardening101.html#whynomiraclegro">Why No Miracle-Gro</a>
+            <a href="gardening101.html#ourgoal">Our Goal</a>
+          </div>
+        </div>
+        <a href="shop.html" aria-current="page">Shop</a>
+        <a href="https://www.instagram.com/dcwgrows" target="_blank" rel="noopener">Instagram</a>
+        <a href="index.html">Home</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>🛒 DCW Grows Shop</h1>
+      <p>Succulents, cactus, plumerias & more — ready to ship.</p>
+    </section>
+
+    <section class="store">
+      <!-- Shopify Buy Button mount point -->
+      <div id='collection-component-1756235343431'>
+        <p class="hint">Loading products… 🌱</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap" style="text-align:center; margin-top:16px">
+    <p style="background:var(--panel); padding:18px; border-radius:10px; box-shadow:var(--shadow)">© 2025 DCW Grows | All rights reserved</p>
+  </footer>
+
+  <!-- Shopify Buy Button (provided) -->
+  <script type="text/javascript">
+  /*<![CDATA[*/
+  (function () {
+    var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+    if (window.ShopifyBuy) {
+      if (window.ShopifyBuy.UI) {
+        ShopifyBuyInit();
+      } else {
+        loadScript();
+      }
+    } else {
+      loadScript();
+    }
+    function loadScript() {
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = scriptURL;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+      script.onload = ShopifyBuyInit;
+    }
+    function ShopifyBuyInit() {
+      var client = ShopifyBuy.buildClient({
+        domain: 'outatinc.myshopify.com',
+        storefrontAccessToken: '5ab76d1c31a639dbc32ea62cd825538d',
+      });
+      ShopifyBuy.UI.onReady(client).then(function (ui) {
+        ui.createComponent('collection', {
+          id: '517857575131',
+          node: document.getElementById('collection-component-1756235343431'),
+          moneyFormat: '%24%7B%7Bamount%7D%7D',
+          options: {
+            "product": {
+              "styles": {
+                "product": {
+                  "@media (min-width: 601px)": {
+                    "max-width": "calc(25% - 20px)",
+                    "margin-left": "20px",
+                    "margin-bottom": "50px",
+                    "width": "calc(25% - 20px)"
+                  },
+                  "img": {
+                    "height": "calc(100% - 15px)",
+                    "position": "absolute",
+                    "left": "0",
+                    "right": "0",
+                    "top": "0"
+                  },
+                  "imgWrapper": {
+                    "padding-top": "calc(75% + 15px)",
+                    "position": "relative",
+                    "height": "0"
+                  }
+                }
+              },
+              "text": {"button": "Add to cart"}
+            },
+            "productSet": {
+              "styles": {"products": {"@media (min-width: 601px)": {"margin-left": "-20px"}}}
+            },
+            "modalProduct": {
+              "contents": {"img": false, "imgWithCarousel": true, "button": false, "buttonWithQuantity": true},
+              "styles": {"product": {"@media (min-width: 601px)": {"max-width": "100%", "margin-left": "0px", "margin-bottom": "0px"}}},
+              "text": {"button": "Add to cart"}
+            },
+            "option": {},
+            "cart": {"text": {"total": "Subtotal", "button": "Checkout"}},
+            "toggle": {}
+          },
+        });
+      });
+    }
+  })();
+  /*]]>*/
+  </script>
+
+  <script>
+    // Mobile menu toggle (matches index)
+    const menuToggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('menu');
+    menuToggle?.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    // Mobile dropdown toggle
+    const dropdown = document.getElementById('dropdown');
+    const gardeningLink = document.getElementById('gardeningLink');
+    const submenu = document.getElementById('submenu');
+    gardeningLink?.addEventListener('click', (e) => {
+      if (window.matchMedia('(max-width: 768px)').matches) {
+        e.preventDefault();
+        dropdown.classList.toggle('active');
+      }
+    });
+  </script>
+</body>
+</html>
