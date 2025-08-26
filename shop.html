@@ -52,15 +52,18 @@
     .menu a[aria-current="page"]{color:var(--accent)}
     .menu-toggle{display:none; font-size:1.9rem; cursor:pointer; user-select:none}
 
-    /* Dropdown (desktop) */
+    /* Dropdown */
     .dropdown{position:relative}
     .dropdown > a{font-weight:700}
     .dropdown-content{
-      display:none; position:absolute; left:0; top:calc(100% + 10px);
+      display:none; position:absolute; left:0; top:100%; /* no gap */
       background:var(--card); min-width:220px; border-radius:10px; box-shadow:var(--shadow); padding:8px; z-index:30;
     }
     .dropdown-content a{display:block; padding:10px 12px; font-weight:600; white-space:nowrap}
-    .dropdown:hover .dropdown-content{display:block}
+    /* Keep open on hover/focus and when JS adds .open */
+    .dropdown:hover .dropdown-content,
+    .dropdown:focus-within .dropdown-content,
+    .dropdown.open .dropdown-content{display:block}
 
     /* Responsive */
     @media (max-width: 768px){
@@ -121,7 +124,7 @@
     <section class="hero">
       <h1>🛒 DCW Grows Shop</h1>
       <p>Succulents, cactus, plumerias & more — ready to ship.</p>
-      <small>This store is powered by Shopify and checkout is securely processed through Shopify.</small>
+      <small>Powered by Shopify — checkout is securely processed through Shopify.</small>
     </section>
 
     <section class="store">
@@ -140,11 +143,8 @@
   <script type="text/javascript">
   (function () {
     var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-    if (window.ShopifyBuy) {
-      if (window.ShopifyBuy.UI) {
-        ShopifyBuyInit();
-      } else { loadScript(); }
-    } else { loadScript(); }
+    if (window.ShopifyBuy) { if (window.ShopifyBuy.UI) { ShopifyBuyInit(); } else { loadScript(); } }
+    else { loadScript(); }
 
     function loadScript() {
       var script = document.createElement('script');
@@ -210,11 +210,25 @@
     // Mobile dropdown accordion
     const dropdown = document.getElementById('dropdown');
     const gardeningLink = document.getElementById('gardeningLink');
+
+    // Prevent jump on click; use accordion on mobile
     gardeningLink.addEventListener('click', (e) => {
       if (window.matchMedia('(max-width: 768px)').matches) {
         e.preventDefault();
         dropdown.classList.toggle('active');
+      } else {
+        e.preventDefault(); // keeps page from jumping to top on desktop
       }
+    });
+
+    // Desktop: keep hover menu open with a tiny delay so you can move into it
+    let ddTimer;
+    dropdown.addEventListener('mouseenter', () => {
+      clearTimeout(ddTimer);
+      dropdown.classList.add('open');
+    });
+    dropdown.addEventListener('mouseleave', () => {
+      ddTimer = setTimeout(() => dropdown.classList.remove('open'), 150);
     });
   </script>
 </body>
