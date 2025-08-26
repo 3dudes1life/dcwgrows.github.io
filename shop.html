@@ -14,91 +14,81 @@
     gtag('config', 'G-GFB1YDW450');
   </script>
 
-  <!-- Favicon -->
+  <!-- Icons/Fonts/Open Graph -->
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="apple-touch-icon" href="favicon.png" />
-
-  <!-- Open Graph / Twitter (optional but helpful) -->
   <meta property="og:title" content="Shop | DCW Grows" />
-  <meta property="og:description" content="Succulents, cactus, plumerias & more — shipped with love from Escondido, CA." />
+  <meta property="og:description" content="Succulents, cactus, plumerias & more — ready to ship." />
   <meta property="og:image" content="Socialmobileshare.png" />
   <meta property="og:url" content="https://www.dcwgrows.com/shop.html" />
   <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet" />
 
   <style>
     :root{
-      --ink:#333;
-      --ink-strong:#111;
-      --accent:#6B8E23; /* olive */
-      --card:rgba(255,255,255,.95);
-      --panel:rgba(255,255,255,.90);
-      --radius:12px;
-      --shadow:0 10px 28px rgba(0,0,0,.10);
+      --ink:#333; --ink-strong:#111; --accent:#6B8E23;
+      --card:rgba(255,255,255,.95); --panel:rgba(255,255,255,.90);
+      --radius:12px; --shadow:0 10px 28px rgba(0,0,0,.10);
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
-      margin:0; font-family:'Quicksand',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--ink);
+      margin:0; font-family:'Quicksand',sans-serif; color:var(--ink);
       background:url('tropical%20background.png') center/cover fixed no-repeat;
     }
 
-    /* NAV (matches index) */
+    /* NAV */
     nav{
       position:sticky; top:0; z-index:10;
       display:flex; align-items:center; justify-content:space-between;
-      gap:16px; padding:14px 20px;
-      background:var(--card); backdrop-filter:saturate(1.1) blur(6px);
-      box-shadow:0 2px 10px rgba(0,0,0,.06);
+      padding:14px 20px; background:var(--card);
+      box-shadow:0 2px 10px rgba(0,0,0,.06); backdrop-filter:saturate(1.1) blur(6px);
     }
-    .logo{display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit}
-    .logo img{width:56px; height:auto; object-fit:contain; transition:transform .2s ease}
+    .logo img{width:56px; height:auto; transition:transform .2s}
     .logo:hover img{transform:scale(1.06)}
     .menu{display:flex; gap:22px; align-items:center}
-    /* Desktop dropdown */
-    .dropdown{position:relative}
-    .dropdown-content{display:none; position:absolute; left:0; top:calc(100% + 10px); background:var(--card); min-width:220px; box-shadow:var(--shadow); border-radius:10px; padding:8px; z-index:30}
-    .dropdown-content a{display:block; padding:10px 12px; font-weight:600; white-space:nowrap}
-    .dropdown:hover .dropdown-content{display:block}
-    .menu a{font-weight:700; text-decoration:none; color:var(--ink-strong)}
-    .menu a:hover{color:var(--accent)}
+    nav a{font-weight:700; text-decoration:none; color:var(--ink-strong)}
+    nav a:hover{color:var(--accent)}
     .menu a[aria-current="page"]{color:var(--accent)}
     .menu-toggle{display:none; font-size:1.9rem; cursor:pointer; user-select:none}
 
+    /* Dropdown (desktop) */
+    .dropdown{position:relative}
+    .dropdown > a{font-weight:700}
+    .dropdown-content{
+      display:none; position:absolute; left:0; top:calc(100% + 10px);
+      background:var(--card); min-width:220px; border-radius:10px; box-shadow:var(--shadow); padding:8px; z-index:30;
+    }
+    .dropdown-content a{display:block; padding:10px 12px; font-weight:600; white-space:nowrap}
+    .dropdown:hover .dropdown-content{display:block}
+
+    /* Responsive */
     @media (max-width: 768px){
-      .menu{display:none; flex-direction:column; position:absolute; top:70px; right:16px; background:var(--card); padding:14px 18px; border-radius:12px; width:min(88vw, 320px); box-shadow:var(--shadow)}
+      .menu{display:none; flex-direction:column; position:absolute; top:70px; right:16px;
+            background:var(--card); padding:14px 18px; border-radius:12px; width:min(88vw, 320px); box-shadow:var(--shadow)}
       .menu.active{display:flex}
       .menu-toggle{display:block}
-      /* On mobile, dropdown becomes accordion */
+      /* Mobile: dropdown becomes accordion */
       .dropdown:hover .dropdown-content{display:none}
       .dropdown-content{position:static; display:none; box-shadow:none; padding:0; background:transparent; min-width:unset}
       .dropdown.active .dropdown-content{display:flex; flex-direction:column}
     }
-      .menu.active{display:flex}
-      .menu-toggle{display:block}
-      .dropdown:hover .dropdown-content{display:none}
-      .dropdown-content{position:static; display:none; box-shadow:none; padding:0; background:transparent}
-      .dropdown.active .dropdown-content{display:flex; flex-direction:column}
-    }
 
-    /* CONTENT WRAP */
+    /* Layout */
     .wrap{max-width:1200px; margin:28px auto 40px; padding:0 16px}
-    .hero{background:var(--panel); border-radius:var(--radius); box-shadow:var(--shadow); padding:28px; text-align:center}
-    .hero h1{margin:0 0 6px}
-    .hero p{margin:0; opacity:.9}
 
-    /* SHOPIFY AREA */
-    .store{background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px; margin-top:20px}
-    .hint{font-size:.95rem; opacity:.75; margin:8px 0 0}
-
-    /* Small tweak for Shopify Buy Button cards on tiny screens */
-    @media (max-width: 600px){
-      .store{padding:10px}
+    /* Hero panel */
+    .hero{
+      background:var(--panel); border-radius:var(--radius); box-shadow:var(--shadow);
+      padding:28px; text-align:center; margin-bottom:20px;
     }
-  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .hero h1{margin:0 0 6px}
+    .hero p{margin:6px 0}
+    .hero small{display:block; opacity:.8; font-size:.95rem}
+
+    /* Shopify area */
+    .store{background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   </style>
 </head>
 <body>
@@ -128,15 +118,15 @@
   </header>
 
   <main class="wrap">
-    <section class=\"hero\">
+    <section class="hero">
       <h1>🛒 DCW Grows Shop</h1>
       <p>Succulents, cactus, plumerias & more — ready to ship.</p>
-      <p style=\"font-size:.95rem; opacity:.8; margin-top:6px\">This store is powered by Shopify and checkout is securely processed through Shopify.</p>
+      <small>This store is powered by Shopify and checkout is securely processed through Shopify.</small>
     </section>
 
     <section class="store">
       <!-- Shopify Buy Button mount point -->
-      <div id='collection-component-1756235343431'>
+      <div id="collection-component-1756235343431">
         <div class="sr-only" aria-live="polite">Loading products…</div>
       </div>
     </section>
@@ -146,36 +136,29 @@
     <p style="background:var(--panel); padding:18px; border-radius:10px; box-shadow:var(--shadow)">© 2025 DCW Grows | All rights reserved</p>
   </footer>
 
-  <!-- Shopify Buy Button (provided) -->
+  <!-- Shopify Buy Button -->
   <script type="text/javascript">
-  /*<![CDATA[*/
   (function () {
     var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
     if (window.ShopifyBuy) {
       if (window.ShopifyBuy.UI) {
         ShopifyBuyInit();
-      } else {
-        loadScript();
-      }
-    } else {
-      loadScript();
-    }
+      } else { loadScript(); }
+    } else { loadScript(); }
+
     function loadScript() {
       var script = document.createElement('script');
-      script.async = true;
-      script.src = scriptURL;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+      script.async = true; script.src = scriptURL;
+      (document.head || document.body).appendChild(script);
       script.onload = ShopifyBuyInit;
     }
+
     function ShopifyBuyInit() {
       var client = ShopifyBuy.buildClient({
         domain: 'outatinc.myshopify.com',
         storefrontAccessToken: '5ab76d1c31a639dbc32ea62cd825538d',
       });
       ShopifyBuy.UI.onReady(client).then(function (ui) {
-        // Remove any loading text once UI is ready
-        var sr = document.querySelector('#collection-component-1756235343431 .sr-only');
-        if (sr) sr.remove();
         ui.createComponent('collection', {
           id: '517857575131',
           node: document.getElementById('collection-component-1756235343431'),
@@ -190,55 +173,44 @@
                     "margin-bottom": "50px",
                     "width": "calc(25% - 20px)"
                   },
-                  "img": {
-                    "height": "calc(100% - 15px)",
-                    "position": "absolute",
-                    "left": "0",
-                    "right": "0",
-                    "top": "0"
-                  },
-                  "imgWrapper": {
-                    "padding-top": "calc(75% + 15px)",
-                    "position": "relative",
-                    "height": "0"
-                  }
+                  "img": { "height": "calc(100% - 15px)", "position": "absolute", "left": "0", "right": "0", "top": "0" },
+                  "imgWrapper": { "padding-top": "calc(75% + 15px)", "position": "relative", "height": "0" }
                 }
               },
-              "text": {"button": "Add to cart"}
+              "text": { "button": "Add to cart" }
             },
-            "productSet": {
-              "styles": {"products": {"@media (min-width: 601px)": {"margin-left": "-20px"}}}
-            },
+            "productSet": { "styles": { "products": { "@media (min-width: 601px)": { "margin-left": "-20px" } } } },
             "modalProduct": {
-              "contents": {"img": false, "imgWithCarousel": true, "button": false, "buttonWithQuantity": true},
-              "styles": {"product": {"@media (min-width: 601px)": {"max-width": "100%", "margin-left": "0px", "margin-bottom": "0px"}}},
-              "text": {"button": "Add to cart"}
+              "contents": { "img": false, "imgWithCarousel": true, "button": false, "buttonWithQuantity": true },
+              "styles": { "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0", "margin-bottom": "0" } } },
+              "text": { "button": "Add to cart" }
             },
             "option": {},
-            "cart": {"text": {"total": "Subtotal", "button": "Checkout"}},
+            "cart": { "text": { "total": "Subtotal", "button": "Checkout" } },
             "toggle": {}
           },
         });
+        // Remove loading text once UI is ready
+        var sr = document.querySelector('#collection-component-1756235343431 .sr-only');
+        if (sr) sr.remove();
       });
     }
   })();
-  /*]]>*/
   </script>
 
   <script>
-    // Mobile menu toggle (matches index)
+    // Mobile menu toggle
     const menuToggle = document.getElementById('menuToggle');
     const menu = document.getElementById('menu');
-    menuToggle?.addEventListener('click', () => {
-      const isOpen = menu.classList.toggle('active');
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', String(open));
     });
 
-    // Mobile dropdown toggle
+    // Mobile dropdown accordion
     const dropdown = document.getElementById('dropdown');
     const gardeningLink = document.getElementById('gardeningLink');
-    const submenu = document.getElementById('submenu');
-    gardeningLink?.addEventListener('click', (e) => {
+    gardeningLink.addEventListener('click', (e) => {
       if (window.matchMedia('(max-width: 768px)').matches) {
         e.preventDefault();
         dropdown.classList.toggle('active');
@@ -247,4 +219,3 @@
   </script>
 </body>
 </html>
- 
