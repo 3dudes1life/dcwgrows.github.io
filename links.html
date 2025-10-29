@@ -145,7 +145,7 @@ canvas#confetti {
     ctx.drawImage(l.img, -l.size/2, -l.size/2, l.size, l.size);
     ctx.restore();
   }
-
+ 
   function animate(){
     if(!running && leaves.length===0) return;
     ctx.clearRect(0,0,W,H);
