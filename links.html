@@ -16,6 +16,7 @@
 <link rel="icon" href="favicon.png" />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
 
+<!-- Tailwind -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config = {
@@ -35,16 +36,20 @@ tailwind.config = {
 </script>
 
 <style>
-body{
-  background:linear-gradient(140deg,#eaf6e9,#fff,#f7f3ea);
-  animation:bgshift 12s ease-in-out infinite alternate;
+body {
+  background: linear-gradient(140deg, #eaf6e9, #fff, #f7f3ea);
+  background-size: 400% 400%;
+  animation: bgshift 15s ease-in-out infinite alternate;
 }
-@keyframes bgshift{
-  0%{background-position:0% 50%}
-  100%{background-position:100% 50%}
+@keyframes bgshift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
-canvas#confetti{
-  position:fixed; inset:0; z-index:50; pointer-events:none;
+canvas#confetti {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
 }
 </style>
 </head>
@@ -91,77 +96,78 @@ canvas#confetti{
 </main>
 
 <script>
-// --- Tropical Leaf Confetti (bright + fast) ---
+// --- Realistic Tropical Leaf Confetti Burst ---
 (function(){
-  const c=document.getElementById('confetti');
-  const ctx=c.getContext('2d');
-  let W,H,leaves=[],running=true;
-  const colors=['#009b5b','#8bf076','#b7ffe4','#ffd85a','#ff8661']; // emerald,lime,mint,gold,coral
-  const shapes=['oval','palm','monstera']; // simple shape variants
+  const c = document.getElementById('confetti');
+  const ctx = c.getContext('2d');
+  let W, H, leaves = [], running = true;
+  const images = [
+    'Leaf1.png', // Monstera
+    'Leaf2.png', // Palm Frond
+    'Leaf3.png', // Banana Leaf
+    'Leaf4.png'  // Philodendron
+  ];
+  const loaded = [];
 
-  function resize(){W=c.width=innerWidth;H=c.height=innerHeight;}
-  window.addEventListener('resize',resize);resize();
+  function resize() {
+    W = c.width = innerWidth;
+    H = c.height = innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  function preload(srcs, cb){
+    let count = 0;
+    srcs.forEach(src=>{
+      const img = new Image();
+      img.src = src;
+      img.onload = ()=>{loaded.push(img); if(++count === srcs.length) cb();};
+    });
+  }
 
   function Leaf(){
-    this.x=Math.random()*W;
-    this.y=-30;
-    this.size=10+Math.random()*14;
-    this.speedY=3+Math.random()*3;   // faster fall
-    this.speedX=(Math.random()-.5)*1.5;
-    this.angle=Math.random()*2*Math.PI;
-    this.spin=.05+Math.random()*.05;
-    this.color=colors[Math.floor(Math.random()*colors.length)];
-    this.shape=shapes[Math.floor(Math.random()*shapes.length)];
-    this.opacity=.8;
+    this.img = loaded[Math.floor(Math.random()*loaded.length)];
+    this.x = Math.random()*W;
+    this.y = -50;
+    this.size = 60 + Math.random()*60;
+    this.speedY = 2 + Math.random()*3;
+    this.speedX = (Math.random()-.5)*1.2;
+    this.angle = Math.random()*2*Math.PI;
+    this.spin = (Math.random()-.5)*0.05;
+    this.opacity = 1;
   }
 
   function drawLeaf(l){
     ctx.save();
-    ctx.translate(l.x,l.y);
+    ctx.globalAlpha = l.opacity;
+    ctx.translate(l.x, l.y);
     ctx.rotate(l.angle);
-    ctx.fillStyle=l.color;
-    ctx.globalAlpha=l.opacity;
-    ctx.beginPath();
-    if(l.shape==='oval'){
-      ctx.ellipse(0,0,l.size,l.size/2,0,0,2*Math.PI);
-    }else if(l.shape==='palm'){
-      ctx.moveTo(-l.size/2,0);
-      for(let i=0;i<5;i++){
-        ctx.lineTo(0,-l.size/2);
-        ctx.lineTo(l.size/2,0);
-        ctx.rotate((Math.PI/5));
-      }
-    }else if(l.shape==='monstera'){
-      ctx.moveTo(0,-l.size/2);
-      ctx.bezierCurveTo(l.size/2,-l.size/4,l.size/2,l.size/4,0,l.size/2);
-      ctx.bezierCurveTo(-l.size/2,l.size/4,-l.size/2,-l.size/4,0,-l.size/2);
-    }
-    ctx.closePath();
-    ctx.fill();
+    ctx.drawImage(l.img, -l.size/2, -l.size/2, l.size, l.size);
     ctx.restore();
   }
 
   function animate(){
-    if(!running && leaves.length===0)return;
+    if(!running && leaves.length===0) return;
     ctx.clearRect(0,0,W,H);
-    leaves.forEach((l)=>{
-      l.y+=l.speedY;
-      l.x+=l.speedX;
-      l.angle+=l.spin;
+    leaves.forEach(l=>{
+      l.y += l.speedY;
+      l.x += l.speedX;
+      l.angle += l.spin;
+      l.opacity -= 0.008; // fade out naturally
       drawLeaf(l);
     });
-    leaves=leaves.filter(l=>l.y<H+40);
+    leaves = leaves.filter(l => l.y < H+100 && l.opacity > 0);
     requestAnimationFrame(animate);
   }
 
-  function init(count=30){
+  function init(count=25){
     leaves=[];
-    for(let i=0;i<count;i++)leaves.push(new Leaf());
+    for(let i=0;i<count;i++) leaves.push(new Leaf());
     animate();
-    setTimeout(()=>running=false,3000);
+    setTimeout(()=>running=false,3000); // run ~3s
   }
 
-  init();
+  preload(images, ()=>init());
 })();
 </script>
 </body>
