@@ -1,157 +1,168 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DCW Grows | Link Hub</title>
-  <meta name="description" content="Shop DCW Grows plants, read growing guides, and Ask the Garden Wizard." />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DCW Grows | Link Hub</title>
+<meta name="description" content="Shop DCW Grows plants, read growing guides, and Ask the Garden Wizard." />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="DCW Grows | Link Hub" />
-  <meta property="og:description" content="Shop plants, read growing guides, and Ask the Garden Wizard." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://dcwgrows.com/links" />
-  <meta property="og:image" content="https://dcwgrows.com/Socialmobileshare.png" />
+<!-- Open Graph -->
+<meta property="og:title" content="DCW Grows | Link Hub" />
+<meta property="og:description" content="Shop plants, read growing guides, and Ask the Garden Wizard." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://dcwgrows.com/links" />
+<meta property="og:image" content="https://dcwgrows.com/Socialmobileshare.png" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="icon" href="favicon.png" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily:{
-            sans:['Quicksand','ui-sans-serif','system-ui'],
-            display:['Poppins','Quicksand','ui-sans-serif']
-          },
-          colors:{
-            dcw:{green:'#4E9F3D',greenD:'#2f6a25',mint:'#eaf6e9',cream:'#f7f3ea',soil:'#6a5f4d'}
-          },
-          boxShadow:{btn:'0 12px 28px rgba(78,159,61,.28)'}
-        }
-      }
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily:{
+        sans:['Quicksand','ui-sans-serif','system-ui'],
+        display:['Poppins','Quicksand','ui-sans-serif']
+      },
+      colors:{
+        dcw:{green:'#4E9F3D',greenD:'#2f6a25',mint:'#eaf6e9',cream:'#f7f3ea',soil:'#6a5f4d'}
+      },
+      boxShadow:{btn:'0 12px 28px rgba(78,159,61,.28)'}
     }
-  </script>
+  }
+}
+</script>
 
-  <style>
-    body{
-      background:linear-gradient(140deg,#eaf6e9,#fff,#f7f3ea);
-      animation:bgshift 12s ease-in-out infinite alternate;
-    }
-    @keyframes bgshift{
-      0%{background-position:0% 50%}
-      100%{background-position:100% 50%}
-    }
-    canvas#confetti{
-      position:fixed; inset:0; z-index:50;
-      pointer-events:none;
-    }
-  </style>
+<style>
+body{
+  background:linear-gradient(140deg,#eaf6e9,#fff,#f7f3ea);
+  animation:bgshift 12s ease-in-out infinite alternate;
+}
+@keyframes bgshift{
+  0%{background-position:0% 50%}
+  100%{background-position:100% 50%}
+}
+canvas#confetti{
+  position:fixed; inset:0; z-index:50; pointer-events:none;
+}
+</style>
 </head>
+
 <body class="min-h-screen flex items-center justify-center px-4 py-12 font-sans">
-  <!-- Leaf confetti -->
-  <canvas id="confetti" aria-hidden="true"></canvas>
+<canvas id="confetti" aria-hidden="true"></canvas>
 
-  <main class="relative z-10 w-full max-w-xl backdrop-blur-md bg-white/70 border border-white/50 rounded-3xl shadow-xl p-6 sm:p-8">
-    <header class="text-center space-y-3">
-      <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo"
-           class="mx-auto h-20 w-20 object-contain drop-shadow-md" />
-      <h1 class="font-display font-bold text-3xl text-neutral-900">DCW Grows</h1>
-      <p class="text-dcw-greenD/90 font-semibold">
-        Fun, educational, and locally grown with love.
-      </p>
-    </header>
+<main class="relative z-10 w-full max-w-xl backdrop-blur-md bg-white/70 border border-white/50 rounded-3xl shadow-xl p-6 sm:p-8">
+<header class="text-center space-y-3">
+  <img src="DCWGrowsLOGO.png" alt="DCW Grows Logo" class="mx-auto h-20 w-20 object-contain drop-shadow-md" />
+  <h1 class="font-display font-bold text-3xl text-neutral-900">DCW Grows</h1>
+  <p class="text-dcw-greenD/90 font-semibold">Fun, educational, and locally grown with love.</p>
+</header>
 
-    <nav class="mt-6 grid gap-3" aria-label="Main Links">
-      <a href="https://www.etsy.com/shop/DCWGrows" target="_blank" rel="noopener"
-         class="group inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-display font-semibold text-white
-         bg-gradient-to-b from-dcw-green to-dcw-greenD shadow-btn transition-transform hover:-translate-y-0.5 hover:shadow-lg">🪴 Shop Plants on Etsy</a>
+<nav class="mt-6 grid gap-3" aria-label="Main Links">
+  <a href="https://www.etsy.com/shop/DCWGrows" target="_blank" rel="noopener"
+     class="group inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-display font-semibold text-white
+     bg-gradient-to-b from-dcw-green to-dcw-greenD shadow-btn transition-transform hover:-translate-y-0.5 hover:shadow-lg">🪴 Shop Plants on Etsy</a>
 
-      <a href="https://dcwgrows.com/shop.html" target="_blank" rel="noopener"
-         class="group inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-display font-semibold text-white
-         bg-gradient-to-b from-dcw-green to-dcw-greenD shadow-btn transition-transform hover:-translate-y-0.5 hover:shadow-lg">🛍️ Shop on Shopify</a>
+  <a href="https://dcwgrows.com/shop.html" target="_blank" rel="noopener"
+     class="group inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-display font-semibold text-white
+     bg-gradient-to-b from-dcw-green to-dcw-greenD shadow-btn transition-transform hover:-translate-y-0.5 hover:shadow-lg">🛍️ Shop on Shopify</a>
 
-      <a href="https://dcwgrows.com/gardening101.html" target="_blank" rel="noopener"
-         class="group inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-display font-semibold text-white
-         bg-gradient-to-b from-dcw-green to-dcw-greenD shadow-btn transition-transform hover:-translate-y-0.5 hover:shadow-lg">🌿 Read Gardening 101 Tips</a>
+  <a href="https://dcwgrows.com/gardening101.html" target="_blank" rel="noopener"
+     class="group inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-display font-semibold text-white
+     bg-gradient-to-b from-dcw-green to-dcw-greenD shadow-btn transition-transform hover:-translate-y-0.5 hover:shadow-lg">🌿 Read Gardening 101 Tips</a>
 
-      <a href="https://dcwgrows.com/growingguide.html" target="_blank" rel="noopener"
-         class="group inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-display font-semibold text-white
-         bg-gradient-to-b from-dcw-green to-dcw-greenD shadow-btn transition-transform hover:-translate-y-0.5 hover:shadow-lg">📖 Browse the Growing Guide</a>
+  <a href="https://dcwgrows.com/growingguide.html" target="_blank" rel="noopener"
+     class="group inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-display font-semibold text-white
+     bg-gradient-to-b from-dcw-green to-dcw-greenD shadow-btn transition-transform hover:-translate-y-0.5 hover:shadow-lg">📖 Browse the Growing Guide</a>
 
-      <a href="https://dcwgrows.com/#wizard-section"
-         class="group inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-display font-semibold text-white
-         bg-gradient-to-b from-dcw-green to-dcw-greenD shadow-btn transition-transform hover:-translate-y-0.5 hover:shadow-lg">🧙‍♂️ Ask the Garden Wizard!</a>
+  <a href="https://dcwgrows.com/#wizard-section"
+     class="group inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-display font-semibold text-white
+     bg-gradient-to-b from-dcw-green to-dcw-greenD shadow-btn transition-transform hover:-translate-y-0.5 hover:shadow-lg">🧙‍♂️ Ask the Garden Wizard!</a>
 
-      <a href="https://instagram.com/dcwgrows" target="_blank" rel="noopener"
-         class="group inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-display font-semibold text-white
-         bg-gradient-to-b from-dcw-green to-dcw-greenD shadow-btn transition-transform hover:-translate-y-0.5 hover:shadow-lg">📸 Follow on Instagram</a>
-    </nav>
+  <a href="https://instagram.com/dcwgrows" target="_blank" rel="noopener"
+     class="group inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-display font-semibold text-white
+     bg-gradient-to-b from-dcw-green to-dcw-greenD shadow-btn transition-transform hover:-translate-y-0.5 hover:shadow-lg">📸 Follow on Instagram</a>
+</nav>
 
-    <footer class="mt-6 text-center text-[.95rem] font-semibold text-dcw-soil/80">
-      © 2025 DCW Grows | All rights reserved
-    </footer>
-  </main>
+<footer class="mt-6 text-center text-[.95rem] font-semibold text-dcw-soil/80">
+  © 2025 DCW Grows | All rights reserved
+</footer>
+</main>
 
-  <script>
-  // ---- Confetti leaves (natural tone, runs once) ----
-  (function(){
-    const canvas=document.getElementById('confetti');
-    const ctx=canvas.getContext('2d');
-    let W,H,leaves=[],running=true;
-    const colors=['#6bbf59','#4e9f3d','#d8c37f']; // light green, dark green, pale gold
-    function resize(){W=canvas.width=innerWidth;H=canvas.height=innerHeight;}
-    window.addEventListener('resize',resize);resize();
+<script>
+// --- Tropical Leaf Confetti (bright + fast) ---
+(function(){
+  const c=document.getElementById('confetti');
+  const ctx=c.getContext('2d');
+  let W,H,leaves=[],running=true;
+  const colors=['#009b5b','#8bf076','#b7ffe4','#ffd85a','#ff8661']; // emerald,lime,mint,gold,coral
+  const shapes=['oval','palm','monstera']; // simple shape variants
 
-    function Leaf(){
-      this.x=Math.random()*W;
-      this.y=-20;
-      this.size=8+Math.random()*10;
-      this.speedY=1+Math.random()*2;
-      this.speedX=(Math.random()-.5)*1;
-      this.angle=Math.random()*2*Math.PI;
-      this.spin=.02+Math.random()*.03;
-      this.color=colors[Math.floor(Math.random()*colors.length)];
-      this.opacity=.7+Math.random()*.3;
-    }
+  function resize(){W=c.width=innerWidth;H=c.height=innerHeight;}
+  window.addEventListener('resize',resize);resize();
 
-    function init(count=25){
-      leaves=[];
-      for(let i=0;i<count;i++){leaves.push(new Leaf());}
-      animate();
-      setTimeout(()=>running=false,3000); // run ~3s
-    }
+  function Leaf(){
+    this.x=Math.random()*W;
+    this.y=-30;
+    this.size=10+Math.random()*14;
+    this.speedY=3+Math.random()*3;   // faster fall
+    this.speedX=(Math.random()-.5)*1.5;
+    this.angle=Math.random()*2*Math.PI;
+    this.spin=.05+Math.random()*.05;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.shape=shapes[Math.floor(Math.random()*shapes.length)];
+    this.opacity=.8;
+  }
 
-    function drawLeaf(l){
-      ctx.save();
-      ctx.translate(l.x,l.y);
-      ctx.rotate(l.angle);
-      ctx.fillStyle=l.color;
-      ctx.globalAlpha=l.opacity;
-      ctx.beginPath();
+  function drawLeaf(l){
+    ctx.save();
+    ctx.translate(l.x,l.y);
+    ctx.rotate(l.angle);
+    ctx.fillStyle=l.color;
+    ctx.globalAlpha=l.opacity;
+    ctx.beginPath();
+    if(l.shape==='oval'){
       ctx.ellipse(0,0,l.size,l.size/2,0,0,2*Math.PI);
-      ctx.fill();
-      ctx.restore();
+    }else if(l.shape==='palm'){
+      ctx.moveTo(-l.size/2,0);
+      for(let i=0;i<5;i++){
+        ctx.lineTo(0,-l.size/2);
+        ctx.lineTo(l.size/2,0);
+        ctx.rotate((Math.PI/5));
+      }
+    }else if(l.shape==='monstera'){
+      ctx.moveTo(0,-l.size/2);
+      ctx.bezierCurveTo(l.size/2,-l.size/4,l.size/2,l.size/4,0,l.size/2);
+      ctx.bezierCurveTo(-l.size/2,l.size/4,-l.size/2,-l.size/4,0,-l.size/2);
     }
+    ctx.closePath();
+    ctx.fill();
+    ctx.restore();
+  }
 
-    function animate(){
-      if(!running && leaves.length===0)return;
-      ctx.clearRect(0,0,W,H);
-      leaves.forEach((l,i)=>{
-        l.y+=l.speedY;
-        l.x+=l.speedX;
-        l.angle+=l.spin;
-        drawLeaf(l);
-      });
-      leaves=leaves.filter(l=>l.y<H+40);
-      requestAnimationFrame(animate);
-    }
+  function animate(){
+    if(!running && leaves.length===0)return;
+    ctx.clearRect(0,0,W,H);
+    leaves.forEach((l)=>{
+      l.y+=l.speedY;
+      l.x+=l.speedX;
+      l.angle+=l.spin;
+      drawLeaf(l);
+    });
+    leaves=leaves.filter(l=>l.y<H+40);
+    requestAnimationFrame(animate);
+  }
 
-    init();
-  })();
-  </script>
+  function init(count=30){
+    leaves=[];
+    for(let i=0;i<count;i++)leaves.push(new Leaf());
+    animate();
+    setTimeout(()=>running=false,3000);
+  }
+
+  init();
+})();
+</script>
 </body>
 </html>
