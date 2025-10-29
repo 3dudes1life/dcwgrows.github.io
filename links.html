@@ -101,11 +101,13 @@ canvas#confetti {
   const c = document.getElementById('confetti');
   const ctx = c.getContext('2d');
   let W, H, leaves = [], running = true;
+
+  // ✅ Fixed paths + cache-busting
   const images = [
-    'Leaf1.png', // Monstera
-    'Leaf2.png', // Palm Frond
-    'Leaf3.png', // Banana Leaf
-    'Leaf4.png'  // Philodendron
+    'https://dcwgrows.com/Leaf1.png?v=' + Date.now(),
+    'https://dcwgrows.com/Leaf2.png?v=' + Date.now(),
+    'https://dcwgrows.com/Leaf3.png?v=' + Date.now(),
+    'https://dcwgrows.com/Leaf4.png?v=' + Date.now()
   ];
   const loaded = [];
 
@@ -121,7 +123,10 @@ canvas#confetti {
     srcs.forEach(src=>{
       const img = new Image();
       img.src = src;
-      img.onload = ()=>{loaded.push(img); if(++count === srcs.length) cb();};
+      img.onload = ()=>{
+        loaded.push(img);
+        if(++count === srcs.length) cb();
+      };
     });
   }
 
@@ -145,7 +150,7 @@ canvas#confetti {
     ctx.drawImage(l.img, -l.size/2, -l.size/2, l.size, l.size);
     ctx.restore();
   }
- 
+
   function animate(){
     if(!running && leaves.length===0) return;
     ctx.clearRect(0,0,W,H);
